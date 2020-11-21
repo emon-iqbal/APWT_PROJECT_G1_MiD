@@ -72,7 +72,7 @@ router.get('/ajaxsearch/:id',(req,res)=>{
 			var str = "";
 			for(i=0;i<results.length;i++)
 			{
-				str+='<a style="position:relative; left:30px; font-size:20px; margin-top:20px;" href="/user/edit/'+results[i].pid+'">'+results[i].ptitle+'</a><br><br>';
+				str+='<a style="position:relative; left:30px; font-size:20px; margin-top:50px;" href="/user/edit/'+results[i].pid+'">'+results[i].ptitle+'</a><br><br>';
 
 			}
 			console.log("in ajax "+str);
