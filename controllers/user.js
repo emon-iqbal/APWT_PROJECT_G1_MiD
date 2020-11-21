@@ -1,149 +1,149 @@
-const express 	= require('express');
+const express = require('express');
 const userModel = require.main.require('./models/userModel');
 var url = require('url');
-const router 	= express.Router();
+const router = express.Router();
 
-router.get('*',  (req, res, next)=>{
-	
-		next();
-	
+router.get('*', (req, res, next) => {
+
+	next();
+
 });
 
-router.get('/create', (req, res)=>{
-	if(req.session.uname != ""){
+router.get('/create', (req, res) => {
+	if (req.session.uname != "") {
 
-	res.render('user/create');}
-	else{
+		res.render('user/create');
+	}
+	else {
 		res.redirect('/login');
 	}
 });
 
 
-router.post('/create', (req, res)=>{
+router.post('/create', (req, res) => {
 
-	if(req.session.uname != ""){
+	if (req.session.uname != "") {
 
-	var newPost = {
-		pTitle : req.body.pTitle,
-		rName : req.body.rName,
-		rPrice : req.body.rPrice,
-		rType: req.body.rType,
-		rDesc: req.body.rDesc,
-		rTag: req.body.rTag
-	};
+		var newPost = {
+			pTitle: req.body.pTitle,
+			rName: req.body.rName,
+			rPrice: req.body.rPrice,
+			rType: req.body.rType,
+			rDesc: req.body.rDesc,
+			rTag: req.body.rTag
+		};
 
-	
 
-	userModel.insert(newPost, function(status){
-				
-		if(status){
-			
-			res.redirect('/home');
-		}else{
-			res.redirect('/login');
-		}
 
-	})
+		userModel.insert(newPost, function (status) {
+			console.log(status);
+			if (!status) {
+				res.redirect('/home');
+			} else {
+				res.redirect('/login');
+			}
 
-}
-	else{
-			res.redirect('/login');
-		}
+		})
+
+	}
+	else {
+		res.redirect('/login');
+	}
 
 
 });
 
-router.get('/edit/:id', (req, res)=>{
+router.get('/edit/:id', (req, res) => {
 
-	if(req.session.uname != ""){
+	if (req.session.uname != "") {
 
 		var i = req.params.id;
-		
-		userModel.getById(i, function(results){
+
+		userModel.getById(i, function (results) {
 			console.log(i);
-			res.render('user/edit', {users: results});
-			
+			res.render('user/edit', { users: results });
+
 		})
 
 	}
 
-	else{
-			res.redirect('/login');
-		}
+	else {
+		res.redirect('/login');
+	}
 
 
-		
+
 });
 
-router.post('/edit/:id', (req, res)=>{
+router.post('/edit/:id', (req, res) => {
 
-	if(req.session.uname != ""){
+	if (req.session.uname != "") {
 
-	var i = req.params.id;
+		var i = req.params.id;
 
-	var editUser = {
-		eName : req.body.eName,
-		cName : req.body.cName,
-		cNo : req.body.cNo,
-		uname: req.body.username,
-		password: req.body.password,
-		type: req.body.type
-	};
+		var editPost = {
+			pTitle: req.body.pTitle,
+			rName: req.body.rName,
+			rPrice: req.body.rPrice,
+			rType: req.body.rType,
+			rDesc: req.body.rDesc,
+			rTag: req.body.rTag
+		};
 
-	console.log(editUser.eName);
+		console.log(editPost.pTitle);
 
-	userModel.update(i, editUser, function(status){
-				
-		if(status){
-			
-			res.redirect('/home');
-		}else{
-			res.redirect('/login');
-		}
+		userModel.update(i, editPost, function (status) {
 
-	})
-	
-}
-	else{
-			res.redirect('/login');
-		}
+			if (!status) {
+
+				res.redirect('/home');
+			} else {
+				res.redirect('/login');
+			}
+
+		})
+
+	}
+	// else{
+	// 		res.redirect('/login');
+	// 	}
 
 
 }
 
 );
 
-router.get('/delete/:id', (req, res)=>{
-	
-	
-	
-			
-			res.render('user/delete' );
-			
-		
+router.get('/delete/:id', (req, res) => {
+
+
+
+
+	res.render('user/delete');
+
+
 
 	//console.log(editUser.eName);
 
-	
+
 
 
 });
 
-router.post('/delete/:id', (req, res)=>{
+router.post('/delete/:id', (req, res) => {
 
 	var i = req.params.id;
 
-	userModel.delete(i, function(status){
+	userModel.delete(i, function (status) {
 
-		if(status){
-			
-			res.redirect('/home');
-		}else{
+		if (!status) {
+
+			res.redirect('/home/userlist');
+		} else {
 			res.redirect('/login');
 		}
 
 	})
-	});
+});
 
 
 
