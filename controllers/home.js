@@ -14,7 +14,9 @@ router.get('*',  (req, res, next)=>{
 router.get('/', (req, res)=>{
 
 	if(req.session.uname != ""){
-	res.render('home/index', {name: 'Admin', id:'123'});
+		var suname = req.session.uname;
+		//var suid = req.session.uname;
+	res.render('home/index', {name: suname, id:'123'});
 	}
 
 	else{
@@ -75,7 +77,7 @@ router.get('/userlist', (req, res)=>{
 				var str = "";
 				for(i=0;i<results.length;i++)
 				{
-					str+='<a style="position:relative; left:30px; font-size:20px; margin-top:20px;" href="/user/edit/'+results[i].id+'">'+results[i].eName+'</a><br><br>';
+					str+='<a style="position:relative; left:30px; font-size:20px; margin-top:20px;" href="/user/edit/'+results[i].pid+'">'+results[i].ptitle+'</a><br><br>';
 
 				}
 				console.log("in ajax "+str);
