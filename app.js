@@ -7,8 +7,8 @@ const cookieParser 		= require('cookie-parser');
 const login				= require('./controllers/login');
 const logout			= require('./controllers/logout');
 const home				= require('./controllers/home');
-const employee			= require('./controllers/employee');
-const eusers			= require('./controllers/eusers');
+// const employee			= require('./controllers/employee');
+// const eusers			= require('./controllers/eusers');
 const path				= require('path');
 
 const user				= require('./controllers/user');
@@ -32,8 +32,8 @@ app.use('/login', login);
 app.use('/home', home);
 app.use('/logout', logout);
 app.use('/user', user);
-app.use('/employee', employee);
-app.use('/eusers', eusers);
+// app.use('/employee', employee);
+// app.use('/eusers', eusers);
 
 
 //router
@@ -43,5 +43,5 @@ app.get('/', (req, res)=>{
 
 //server startup
 app.listen(port, (error)=>{
-	console.log('server strated at '+port);
+	console.log('server started at '+port);
 });
