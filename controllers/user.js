@@ -23,17 +23,15 @@ router.get('/create', (req, res) => {
 router.post('/create', (req, res) => {
 
 	if (req.session.uname != "") {
-
+		rtag = req.session.uname;
 		var newPost = {
 			pTitle: req.body.pTitle,
 			rName: req.body.rName,
 			rPrice: req.body.rPrice,
 			rType: req.body.rType,
 			rDesc: req.body.rDesc,
-			rTag: req.body.rTag
+			rTag: rTag
 		};
-
-
 
 		userModel.insert(newPost, function (status) {
 			console.log(status);
@@ -144,10 +142,6 @@ router.post('/delete/:id', (req, res) => {
 
 	})
 });
-
-
-
-
 
 
 module.exports = router;
