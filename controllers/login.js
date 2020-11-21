@@ -21,7 +21,7 @@ console.log(req.body.username);
 		
 		
 
-		if(status == "admin"){
+		if(status == "hm"){
 			
 			req.session.uname = req.body.username;
 			
