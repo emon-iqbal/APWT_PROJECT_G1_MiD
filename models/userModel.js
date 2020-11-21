@@ -25,18 +25,14 @@ module.exports = {
 
 
 	},
-	getAll: function (callback) {
-		var sql = "select * from post";
+	getAll: function (suname, callback) {
+		//uname = 'neil';
+		var sql = "select * from post where tag='" + suname + "'";
 		db.getResults(sql, function (results) {
 			callback(results);
 		});
 	},
-	getAllPost: function (callback) {
-		var sql = "select * from post";
-		db.getResults(sql, function (results) {
-			callback(results);
-		});
-	},
+	
 	insert: function (newPost, callback) {
 		var sql = "INSERT INTO post (ptitle, rname, rprice, rtype, rdesc, tag) VALUES ( '" + newPost.pTitle + "','" + newPost.rName + "','" + newPost.rPrice + "','" + newPost.rType + "', '" + newPost.rDesc + "','" + newPost.rTag + "')";
 		db.execute(sql, function (err) {
