@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 	if (req.session.uname != "") {
 		var suname = req.session.uname;
 		//var suid = req.session.uname;
-		res.render('home/index', { name: suname, id: '123' });
+		res.render('home/index', { name: suname});
 	}
 
 	else {
@@ -57,7 +57,33 @@ router.post('/', (req, res) => {
 
 });
 
+router.get('/ajaxsearch/:id',(req,res)=>{
 
+	var txt = req.body.search;
+
+	console.log(txt);
+
+	var word = req.params.id;
+	console.log('word value '+word);
+	if(word!=null || word!=undefined || txt!=null)
+	{
+		userModel.search(word, function(results){
+
+			var str = "";
+			for(i=0;i<results.length;i++)
+			{
+				str+='<a style="position:relative; left:30px; font-size:20px; margin-top:20px;" href="/user/edit/'+results[i].pid+'">'+results[i].ptitle+'</a><br><br>';
+
+			}
+			console.log("in ajax "+str);
+			//res.render('user/edit', {users: results});
+			res.send(str);
+
+		});
+	}
+	
+
+});
 
 
 module.exports = router;
