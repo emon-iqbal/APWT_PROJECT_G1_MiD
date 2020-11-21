@@ -49,7 +49,7 @@ module.exports = {
 	update: function (Uid, user, callback) {
 
 
-		var sql = "UPDATE post SET ptitle='" + user.pTitle + "', rname='" + user.rName + "', rprice='" + user.rPrice + "' , rtype='" + user.rType + "', rdesc='" + user.rDesc + "', tag='" + user.rTag + "' where pid='" + Uid + "'";
+		var sql = "UPDATE post SET ptitle='" + user.pTitle + "', rname='" + user.rName + "', rprice='" + user.rPrice + "' , rtype='" + user.rType + "', rdesc='" + user.rDesc + "' where pid='" + Uid + "'";
 		db.execute(sql, function (results) {
 			if (results.length > 0) {
 				callback(true);

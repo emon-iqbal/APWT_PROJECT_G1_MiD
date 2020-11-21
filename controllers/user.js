@@ -30,7 +30,7 @@ router.post('/create', (req, res) => {
 			rPrice: req.body.rPrice,
 			rType: req.body.rType,
 			rDesc: req.body.rDesc,
-			rTag: rTag
+			rTag: rtag
 		};
 
 		userModel.insert(newPost, function (status) {
@@ -76,7 +76,7 @@ router.get('/edit/:id', (req, res) => {
 router.post('/edit/:id', (req, res) => {
 
 	if (req.session.uname != "") {
-
+		
 		var i = req.params.id;
 
 		var editPost = {
@@ -85,7 +85,7 @@ router.post('/edit/:id', (req, res) => {
 			rPrice: req.body.rPrice,
 			rType: req.body.rType,
 			rDesc: req.body.rDesc,
-			rTag: req.body.rTag
+			
 		};
 
 		console.log(editPost.pTitle);
