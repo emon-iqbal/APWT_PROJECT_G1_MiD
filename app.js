@@ -7,7 +7,7 @@ const cookieParser 		= require('cookie-parser');
 const login				= require('./controllers/login');
 const logout			= require('./controllers/logout');
 const home				= require('./controllers/home');
-// const employee			= require('./controllers/employee');
+const comment			= require('./controllers/comment');
 // const eusers			= require('./controllers/eusers');
 const path				= require('path');
 
@@ -32,7 +32,7 @@ app.use('/login', login);
 app.use('/home', home);
 app.use('/logout', logout);
 app.use('/user', user);
-// app.use('/employee', employee);
+app.use('/comment', comment);
 // app.use('/eusers', eusers);
 
 
