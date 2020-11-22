@@ -1,4 +1,5 @@
 const express = require('express');
+const commentModel = require('../models/commentModel');
 const userModel = require.main.require('./models/userModel');
 const router = express.Router();
 
@@ -31,6 +32,23 @@ router.get('/userlist', (req, res) => {
 		// console.log(suname);
 		userModel.getAll(suname,function (results) {
 			res.render('home/userlist', { users: results });
+
+		});
+	}
+	else {
+		res.redirect('/login');
+	}
+
+
+});
+
+router.get('/commentlist', (req, res) => {
+
+	if (req.session.uname != "") {
+		//suname = req.session.uname;
+		// console.log(suname);
+		commentModel.getAll(function (results) {
+			res.render('home/commentlist', { users: results });
 
 		});
 	}
