@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2020 at 11:27 PM
+-- Generation Time: Nov 22, 2020 at 04:44 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `travel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `cid` int(100) NOT NULL,
+  `comment` varchar(100) NOT NULL,
+  `pid` int(100) NOT NULL,
+  `tag` varchar(100) NOT NULL,
+  `ptitle` varchar(100) NOT NULL,
+  `cresponse` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`cid`, `comment`, `pid`, `tag`, `ptitle`, `cresponse`) VALUES
+(1, 'test', 1, 'neil', 'test', 'ss');
 
 -- --------------------------------------------------------
 
@@ -43,7 +65,8 @@ CREATE TABLE `post` (
 
 INSERT INTO `post` (`pid`, `ptitle`, `rname`, `rprice`, `rtype`, `rdesc`, `tag`) VALUES
 (29, 'this is a test', 'test', 'test', 'test', 'sfsdf', 'neil'),
-(30, 'oio', 'ioi', 'io', 'pip', 'ioioi', 'neil');
+(30, 'oio', 'ioi', 'io', 'pip', 'ioioi2', 'neil'),
+(31, 'fdsd', 'sdf', 'sdf', 'sdf', 'sdf2', 'neil');
 
 -- --------------------------------------------------------
 
@@ -73,6 +96,12 @@ INSERT INTO `user` (`id`, `hmName`, `hotelName`, `hmPhone`, `uname`, `password`,
 --
 
 --
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`cid`);
+
+--
 -- Indexes for table `post`
 --
 ALTER TABLE `post`
@@ -89,10 +118,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `cid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `pid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `pid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `user`
