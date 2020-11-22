@@ -30,7 +30,8 @@ router.post('/create', (req, res) => {
 			rPrice: req.body.rPrice,
 			rType: req.body.rType,
 			rDesc: req.body.rDesc,
-			rTag: rtag
+			rTag: rtag,
+			avail: req.body.avail
 		};
 
 		userModel.insert(newPost, function (status) {
@@ -85,6 +86,7 @@ router.post('/edit/:id', (req, res) => {
 			rPrice: req.body.rPrice,
 			rType: req.body.rType,
 			rDesc: req.body.rDesc,
+			avail: req.body.avail,
 			
 		};
 

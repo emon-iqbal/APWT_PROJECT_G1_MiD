@@ -2,6 +2,7 @@ const db = require('./db');
 
 module.exports = {
 	validate: function (user, callback) {
+
 		var sql = "select * from user where uname='" + user.uname + "' and password='" + user.password + "'";
 		db.getResults(sql, function (results) {
 			if (results.length > 0) {
@@ -14,6 +15,7 @@ module.exports = {
 			}
 		});
 	},
+	
 	getById: function (Sid, callback) {
 
 		var sql = "select * from post where pid='" + Sid + "'";
@@ -34,7 +36,8 @@ module.exports = {
 	},
 	
 	insert: function (newPost, callback) {
-		var sql = "INSERT INTO post (ptitle, rname, rprice, rtype, rdesc, tag) VALUES ( '" + newPost.pTitle + "','" + newPost.rName + "','" + newPost.rPrice + "','" + newPost.rType + "', '" + newPost.rDesc + "','" + newPost.rTag + "')";
+
+		var sql = "INSERT INTO post (ptitle, rname, rprice, rtype, rdesc, tag, avail) VALUES ( '" + newPost.pTitle + "','" + newPost.rName + "','" + newPost.rPrice + "','" + newPost.rType + "', '" + newPost.rDesc + "','" + newPost.rTag + "','" + newPost.avail + "')";
 		db.execute(sql, function (err) {
 			
 			if (err) {
@@ -48,8 +51,7 @@ module.exports = {
 
 	update: function (Uid, user, callback) {
 
-
-		var sql = "UPDATE post SET ptitle='" + user.pTitle + "', rname='" + user.rName + "', rprice='" + user.rPrice + "' , rtype='" + user.rType + "', rdesc='" + user.rDesc + "' where pid='" + Uid + "'";
+		var sql = "UPDATE post SET ptitle='" + user.pTitle + "', rname='" + user.rName + "', rprice='" + user.rPrice + "' , rtype='" + user.rType + "', rdesc='" + user.rDesc + "', avail='" + user.avail + "' where pid='" + Uid + "'";
 		db.execute(sql, function (results) {
 			if (results.length > 0) {
 				callback(true);
@@ -60,6 +62,7 @@ module.exports = {
 		});
 
 	},
+
 	delete: function (Eid, callback) {
 
 		var sql = "DELETE FROM post WHERE pid='" + Eid + "'";

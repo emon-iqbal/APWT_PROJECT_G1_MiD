@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 app.use('/public', express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
-app.use(exSession({secret: 'secret value', saveUninitialized: true, resave: false}));
+app.use(exSession({secret: 'super secret value', saveUninitialized: true, resave: false}));
 
 
 
