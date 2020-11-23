@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show Post</title>
+</head>
+<body>
+	<h1>Show Post</h1>
+
+	<a href="/home">Back</a> | 
+	<a href="/logout">logout</a> 
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>Post ID</td>
+			<td>Post Title</td>
+			<td>Room Name</td>
+			<td>Room Price</td>
+			<td>Room Type</td>
+			<td>Room Description</td>
+			<td>Room Availability</td>
+			<!-- <td>Tag</td> -->
+			<td>Action</td>
+		</tr>
+		
+		<!-- <% for(var i=0; i < users.length; i++){ %>
+			
+			<tr>
+				<td><%= users[i][0] %></td>
+				<td><%= users[i][1] %></td>
+				<td><%= users[i][2] %></td>
+				<td><%= users[i][3] %></td>
+			</tr>
+
+		<% } %> -->
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+				<td><%= std.pid %></td>
+				<td><%= std.ptitle %></td>
+				<td><%= std.rname %></td>
+				<td><%= std.rprice %></td>
+				<td><%= std.rtype %></td>
+				<td><%= std.rdesc %></td>
+				<td><%= std.avail %></td>
+				<!-- <td><%= std.tag %></td> -->
+				<td>
+					<a href="/user/edit/<%= std.pid %>">Edit</a> |
+					<a href="/user/delete/<%= std.pid %>">Delete</a>
+				</td>
+			</tr>
+
+		<%
+			}); 
+		%>
+		
+	</table>
+
+</body>
+</html>
+
