@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show Post</title>
+</head>
+<body>
+	<h1>Show Comment</h1>
+
+	<a href="/home">Back</a> | 
+	<a href="/logout">logout</a> 
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>Comment ID</td>
+			<td>Comment </td>
+            <td>Post ID</td>
+            <td>Post Title</td>
+            <td>Comment Response</td>
+			<td>Tag</td>
+			<td>Action</td>
+		</tr>
+		
+		<!-- <% for(var i=0; i < users.length; i++){ %>
+			
+			<tr>
+				<td><%= users[i][0] %></td>
+				<td><%= users[i][1] %></td>
+				<td><%= users[i][2] %></td>
+				<td><%= users[i][3] %></td>
+			</tr>
+
+		<% } %> -->
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+				<td><%= std.cid %></td>
+				<td><%= std.comment %></td>
+                <td><%= std.pid %></td>
+                <td><%= std.ptitle %></td>
+                <td><%= std.cresponse %></td>
+				<td><%= std.tag %></td>
+				
+				<!-- <td><%= std.tag %></td> -->
+				<td>
+					<a href="/comment/edit/<%= std.pid %>">Response</a> |
+					<!-- <a href="/comment/delete/<%= std.pid %>">Delete</a> -->
+				</td>
+			</tr>
+
+		<%
+			}); 
+		%>
+		
+	</table>
+
+</body>
+</html>
+

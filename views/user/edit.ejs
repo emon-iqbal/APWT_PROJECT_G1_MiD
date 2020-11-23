@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit Post</title>
+</head>
+
+<body>
+	<form method="post">
+		<fieldset>
+			<legend>Edit Post</legend>
+			<table>
+				<tr>
+					<td>Post Title</td>
+					<td><input type="text" name="pTitle" value="<%= users[0].ptitle %>"></td>
+				</tr>
+				<tr>
+					<td>Room Name</td>
+					<td><input type="text" name="rName" value="<%= users[0].rname %>"></td>
+				</tr>
+
+				<tr>
+					<td>Room Price</td>
+					<td><input type="text" name="rPrice" value="<%= users[0].rprice %>"></td>
+				</tr>
+
+				<tr>
+					<td>Room Type</td>
+					<td><input type="text" name="rType" value="<%= users[0].rtype %>"></td>
+				</tr>
+
+
+				<tr>
+					<td>Room Descipiton</td>
+					<td><input type="text" name="rDesc" value="<%= users[0].rdesc %>"></td>
+				</tr>
+				<tr>
+					<td>Room avail</td>
+					<td><input type="text" name="avail" value="<%= users[0].avail %>"></td>
+				</tr>
+				<!-- <tr>
+					<td>Room Tag</td>
+					<td><input type="text" name="rTag" value="<%= users[0].tag %>"></td>
+				</tr> -->
+
+				<tr>
+					<td></td>
+					<td><input type="submit" name="submit" value="Submit"></td>
+				</tr>
+
+			</table>
+		</fieldset>
+	</form>
+</body>
+
+</html>
