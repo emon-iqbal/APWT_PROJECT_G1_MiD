@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STUDENTS OF THIS SITE</title>
+	<link rel="stylesheet" type="text/css" href="/assets/style.css">
+<style type="text/css">
+
+	table{
+	border-collapse: collapse;
+	width: 100%;
+	color: white;
+	background-color: blue;
+	font-style: "Arial Rounded MT Bold";
+	font-size: 20px;
+	text-align: center;
+	}
+	#no
+	{
+		color: blue;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
+	#of
+	{
+		color: blue;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
+	#link
+	{
+		color: blue;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
+
+</style>
+
+</head>
+
+<body><center>
+	<form>
+
+	<table border="7">
+		<tr>
+			<td><div id="of"><h1><center><a href="/dashboard/TP_Student_Schedules">SCHEDULES</a></center></h1></div></td>
+			<td colspan="7"><h1>STUDENTS_DETAILS</h1><div id="no"><u>AMOUNT of STUDENTS: <%= student.length %></u></div></td>
+		</tr>
+
+		<tr>
+			<th>ID</th>
+			<th>STUDENT_NAME</th>
+      <th>Student_Institution</th>
+      <th>Email</th>
+			<th>Gender</th>
+			<th>Standard</th>
+			<th>Sub_to_study</th>
+			<th colspan="8">ACTiONS</th>
+		</tr>
+
+		<% for(var i=0; i < student.length; i++){ %>
+		<tr>
+			<td><%= student[i].id %></td>
+			<td><%= student[i].student_name %></td>
+      <td><%= student[i].student_academy %></td>
+			<td><%= student[i].email %></td>
+			<td><%= student[i].gender %></td>
+			<td><%=student[i].class %></td>
+			<td><%= student[i].courses %></td>
+      <td colspan="8"><center>
+				<div id="link">
+				      <a href="/dashboard/TP_Student_List/update/<%= student[i].id%>">U P D A T E</a> ~
+				      <a href="/dashboard/TP_Student_List/delete/<%= student[i].id%>">DELETE</a>
+        </div>
+			</center></td>
+    </tr>
+
+
+		<% } %>
+
+		  <tr>
+        <td><div id="of"><h1><center><a href="/dashboard/TP_Student_List/insert">insert</a></center></h1></div></td>
+        <td colspan="8"><div id="of"><a href="/dashboard">H O M E</a></div> </td>
+       </tr>
+		</table>
+
+		</form>
+</center></body>
+</html>

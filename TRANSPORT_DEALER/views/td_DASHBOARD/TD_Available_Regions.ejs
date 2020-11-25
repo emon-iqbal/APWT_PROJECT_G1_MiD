@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TD Available Regions</title>
+ <link rel="stylesheet" type="text/css" href="/DEALit/css/TD_List.css">
+
+</head>
+
+<body><center>
+	<table border="5">
+		<tr>
+			<td><div id="of"><h1><center><a href="/td_DASHBOARD/TD_Available_Regions/insert">ADD NEW Regions</a></center></h1></div></td>
+			<td colspan="8"><h1>ALL AVAILABLE REGIONS TO TRAVEL</h1>
+				<div id="no"><u>TOTAL number of REGIONS: <%= td.length %></u></div>
+      </td>
+		</tr>
+
+		<tr>
+			<th>ID</th>
+			<th>Region_NAME</th>
+			<th>Country</th>
+			<th>Continent</th>
+			<th>Area_CODE</th>
+			<th colspan="6">ACTiONS</th>
+		</tr>
+
+		<% for(var i=0; i < td.length; i++){ %>
+		<tr>
+			<td><%= td[i].td_id %></td>
+			<td><%= td[i].r_name %></td>
+			<td><%= td[i].country %></td>
+			<td><%= td[i].continent %></td>
+			<td><%= td[i].r_code %></td>
+			<td colspan="6">
+				<div id="link">
+				<a href="/td_DASHBOARD/TD_Available_Regions/edit/<%= td[i].td_id%>">UPDATE</a> ~
+				<a href="/td_DASHBOARD/TD_Available_Regions/delete/<%= td[i].td_id%>">DELETE</a>
+			</div>
+			</td>
+		</tr>
+		<% } %>
+
+		<tr>
+				<td colspan="8"><div id="of"><a href="/td_DASHBOARD">H O M E</a></div></td>
+		</tr>
+			</table>
+
+</body>
+</html>

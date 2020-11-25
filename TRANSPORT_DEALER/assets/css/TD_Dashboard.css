@@ -1,0 +1,171 @@
+body
+{
+	background: rgb(255,250,22);
+}
+#nametp
+{
+	width:1320px;
+	text-align: center;
+	font-size: 30px;
+	margin-right: -50px;
+	margin-top: -60px;
+	font-family: IMPACT;
+	color: rgb(0,255,0);
+	background: black;
+}
+#TP_main h1
+{
+	text-align: center;
+	width: 1330px;
+	font-size: 30px;
+	margin-right: -10px;
+	margin-top: -10px;
+	/* margin: -10px;
+	padding-top: -30px; */
+	font-family:Goudy Stout;
+	color: rgb(112,48,160);
+	background: whitesmoke;
+}
+.blink{
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+#TP_main
+{
+  text-align: center;
+  min-width: 1000px;
+  height: 560px;
+ margin-bottom: 5px;
+  /* padding-bottom: 0px; */
+  border: 30px solid blue;
+  border-radius: 15px;
+  color: black;
+  font-size: 30px;
+  background: rgb(255,255,102);
+}
+
+#table
+{
+  text-align: center;
+  min-width: 1390px;
+  height: 600px;
+	/* margin-right: -10px;
+	margin-top: -30px; */
+  /* padding-left: -20px; */
+	margin-top: -45px;
+	margin-left: -30px;
+  border: 30px solid blue;
+  border-radius: 20px;
+  color: rgb(255,255,102);
+  font-size: 30px;
+  background: rgb(255,255,102);
+}
+#linker
+{
+	padding-right: 15px;
+	padding-bottom: 15px;
+}
+#linker
+a
+{
+  min-width: 1275px;
+  font-family: "Algerian";
+  font-size: 25px;
+  color: rgb(246,142,56);
+  background: black;
+  border: 10px solid;
+  border-radius: 15px;
+}
+#linker:hover {
+  color: purple;
+  background-color: purple;
+}
+
+
+#lin1
+a
+{
+  min-width: 1300px;
+  font-family: "Copperplate Gothic Bold";
+  font-size: 25px;
+  color: rgb(246,142,56);
+  background: black;
+  border: 5px solid;
+  border-radius: 10px;
+}
+#lin1:hover {
+  color: blue;
+  background-color: blue;
+}
+
+#lin2
+{
+	padding-top: -10px;
+}
+
+#lin2
+a
+{
+	min-width: 1300px;
+	font-family: "Copperplate Gothic Bold";
+	font-size: 25px;
+	color: rgb(246,142,56);
+	background: black;
+	border: 5px solid;
+	border-radius: 10px;
+}
+#lin2:hover {
+  color: green;
+  background-color: green;
+}
+
+#lin3
+a
+{
+	min-width: 1300px;
+	font-family: "Copperplate Gothic Bold";
+	font-size: 25px;
+	color: rgb(246,142,56);
+	background: black;
+	border: 5px solid;
+	border-radius: 10px;
+}
+#lin3:hover {
+  color:red;
+  background-color: red;
+}
+/*
+.tia
+{
+	color: rgb(71,7,135);
+	margin-top: -15px;
+	padding-bottom: 20px;
+	font-family: "Showcard Gothic";
+} */
+
+#logout
+{
+	padding-top: 20px;
+}
+
+#logout
+a
+{
+	min-width: 1300px;
+	padding-top: -15px;
+	font-family: "Copperplate Gothic Bold";
+	font-size: 25px;
+	color: rgb(246,142,56);
+	background: black;
+	border: 10px solid;
+	border-radius: 5px;
+	border-width:inherit;
+}
+#logout:hover {
+  color:black;
+  background-color: skyblue;
+}

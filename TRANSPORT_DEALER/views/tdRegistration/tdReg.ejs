@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTRATION</title>
+	<link rel="stylesheet" type="text/css" href="/DEALit/css/TD_Reg.css">
+	<script type="text/javascript" src="/DEALit/js/val_Reg.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="abc/style.css"> -->
+<!-- <style rel="stylesheet">
+
+</style> -->
+
+<!-- <script type="text/javascript">
+
+</script> -->
+
+</head>
+
+<body><center>
+	<form id="reg" name="myform" onsubmit="return valid()" method="POST" enctype="multipart/form-data">
+		<center><h1>R E G I S T R A T I O N</h1></center>
+		<table>
+			<tr>
+				<td><b>USERNAME</b></td>
+				<td><input type="text" id="name" name="username" value=""  onkeypress='return onlyalphabets(event)' ></td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr>
+				<td><b>PASSWORD</b></td>
+				<td><input type="password" id="pass" name="password" value=""></td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr></tr>
+			<tr>
+				<td><b>EMAiL</b></td>
+				<td><input type="email" id="email" name="email" value=""></td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr>
+				<td><br><b><div id="gen">GENDER</div></b></td>
+				<td><br><input type="radio" name="gender" value="M">Male
+				<input type="radio" name="gender" value="F">Female</td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr>
+
+				<td><b><div id="edu">EDUCATION</div></b></td>
+				<td><input type="radio" name="education" value="ssc">S.S.C
+				<input type="radio" name="education" value="hsc">H.S.C
+				<input type="radio" name="education" value="bsc">B.Sc</td>
+				<td> </td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr>
+				<td><b><div id="tou">TYPE OF USER</div></b></td>
+				<td><input type="radio" name="type" value="admin" />Admin
+				 <input type="radio" name="type" value="HotelManager" />Hotel_Manager
+				 <input type="radio" name="type" value="Trans_Dealer" />Transport_Dealer
+				 <input type="radio" name="type" value="traveler" />Traveler</td>
+			</tr>
+			<tr>
+				<td><b><div id='pic'>PiCTURE</div></b></td>
+				<td><input type="file" id="picfile" name="file" accept=""/></td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
+	</table>
+	<table>
+			<tr>
+				<td><br><center>
+					<div id="submit"><input type="submit" name="submit" value="R E G I S T E R">
+					<input type="reset" name="reset" value="REFRESH"></div>
+					<td><a href="/tdLogin">LOGiN</a></td>
+				</center></td>
+			</tr>
+	</table>
+
+	</form>
+</center></body>
+</html>

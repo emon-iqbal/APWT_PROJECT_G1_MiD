@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE Vehicles</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/CSS/TD_List.css">
+  <!-- <script type="text/javascript" src="/DEALit/js/val_TD.js"></script> -->
+</head>
+
+<body>
+	<form name="myform" onsubmit="return insertCheck();" method="POST">
+
+    <table border="5">
+      <tr>
+        <td colspan="2"><div id="of"><h1><center>UPDATE Vehicle</center></h1></div></td>
+      </tr>
+
+      <tr>
+				<td>ID</td>
+				<td><input type="text" readonly name="id" value="<%=td.td_id%>"></td>
+			</tr>
+			<tr>
+				<td>Vehicle - NAME</td>
+				<td><input type="text" name="v_name" value="<%=td.v_name%>" onkeypress='return onlyalphabets(event)'></td>
+
+			</tr>
+			<tr>
+  				<td>V_Type</td>
+  				<td><input type="text" name="v_type" value="<%=td.v_type%>"></td>
+
+      </tr>
+      <tr>
+				<td>V_DISTANCE</td>
+				<td><input type="text" name="v_distance" value="<%=td.v_distance%>"> </td>
+
+			</tr>
+      <tr>
+				<td>V_Cost</td>
+				<td><input type="number" name="v_cost" value="<%=td.v_cost%>"></td>
+			</tr>
+      <tr></tr>
+
+			<tr>
+				<td><div id="of"><a href="/td_DASHBOARD/TD_Vehicles">Check VehicleLIST</a> </div></td>
+				<td><div id="upom"><input type="submit" id="submit" name="submit" value="UPDATE" onclick="insert()"></div></td>
+			</tr>
+	</table>
+
+  </form>
+
+    <script type="text/javascript">
+
+        /*ASCII code: 65-90>> UPPERCASE
+        8>>   Backspace,
+        95>>  underscore[_]*/
+
+        function onlyalphabets(e)
+        {
+        var v_name=e.which||e.keycode;
+          if((v_name>=65 && v_name<=90) || (v_name==95) || (v_name>=97 && v_name<=122) || v_name==8)
+          {
+            return true;
+          }
+          else
+          {
+            return false;
+          }
+        }
+    </script>
+
+    <script>
+
+      function insertCheck()
+      {
+        var name = document.getElementById('v_name').value;
+        var email = document.getElementById('v_type').value;
+        var gender = document.getElementById('v_distance').value;
+        var education = document.getElementById('v_cost').value;
+
+        if(name == "")
+        {
+          alert('PLEASE FILL THE VEHICLE_NAME to proceed');
+          return false;
+        }
+        if(email == "")
+        {
+          alert('PLEASE FILL THE TYPES of VEHiCLES area to proceed');
+          return false;
+        }
+        if(gender == "")
+        {
+          alert('PLEASE FILL THE Route  to proceed');
+          return false;
+        }
+        if(education == "")
+        {
+          alert('PLEASE FILL THE expense of travel to proceed');
+          return false;
+        }
+
+        if(name.length<4)
+        {
+          alert('Name must be at least 4 characters to be valid in this field');
+          return false;
+        }
+        if(name.length>15)
+        {
+          alert('Name must be less than 15 characters to be valid in this field');
+          return false;
+        }
+        else
+        {
+          return true;
+        }
+
+      }
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+<!-- <style type="text/css">
+table{
+	color: whitesmoke;
+	background-color: blue;
+}
+#upom
+{
+	text-align: center;
+	color: whitesmoke;
+	background-color: orange;
+	background-size: auto;
+	border: 10px solid;
+}
+#upom a
+{
+	color: black;
+	font-size: 20px;
+}
+</style> -->

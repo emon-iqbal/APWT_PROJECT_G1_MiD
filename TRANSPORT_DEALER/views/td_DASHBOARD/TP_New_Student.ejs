@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STUDENT_LiST</title>
+<style rel="stylesheet">
+body
+{
+	background: rgb(196,188,150);
+}
+#Tinsert_form h1
+{
+  text-align: center;
+}
+#Tinsert_form
+{
+  width: 1200px;
+  margin: 20px auto;
+  border: 1px solid #918274;
+  border-radius: 20px;
+  color: black;
+  font-size: 30px;
+  background: rgb(196,188,150);
+}
+#Tinsert_form input
+{
+
+  width: 600px;
+  height: 35px;
+  margin: 5px 10%;
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 25px;
+}
+#submit
+{
+  height: 60px;
+  width: 200px;
+  margin: 5px 10%;
+  font-family: "IMPACT";
+  font-size: 35px;
+  color: white;
+  background: rgb(255,0,0);
+  border: none;
+  border-radius: 5px;
+}
+a
+{
+
+  height: 60px;
+  width: 100px;
+  margin: 5px 10%;
+  font-size: 35px;
+  color: red;
+  background-color: rgb(255,255,33);
+  text-decoration: underline-bold;
+  border-radius: 5px;
+
+}
+
+
+</style>
+</head>
+<body><center>
+
+	<form id="Tinsert_form" method="post" onsubmit="return insertCheck();">
+
+
+		<center><h1>ADD NEW STUDENTS</h1></center>
+		<div>
+			 <input type="text" id="sname" name="sname" placeholder="STUDENT NAME" onkeypress='return onlyalphabets(event)'/>
+		</div>
+    <div>
+			 <input type="text" id="school" name="school" placeholder="Student_Institution">
+		</div>
+		<div>
+			 <input type="email" id="email" name="email" placeholder="email">
+		</div>
+		<div>
+			<input type="text" id="gender" name="gender" placeholder="gender">
+		</div>
+		<div>
+			<input type="text" id="classs" name="classs" placeholder="standard">
+		</div>
+		<div>
+			<input type="text" id="course" name="course" placeholder="courses">
+		</div>
+		<br>
+		<div>
+			<button type="submit" id="submit" name="submit" onclick="insert()">I N S E R T</button>
+			<a href="/dashboard/TP_Student_List">STUDENTList</a>
+    </div>
+
+	</form>
+
+  <script type="text/javascript">
+
+			/*ASCII code: 65-90>> UPPERCASE
+			8>>   Backspace,
+			95>>  underscore[_]*/
+
+			function onlyalphabets(e)
+			{
+			var sname=e.which||e.keycode;
+				if((sname>=65 && sname<=90) || (sname==95) || (sname>=97 && sname<=122) || sname==8)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+	</script>
+
+	<script>
+
+		function insertCheck()
+		{
+			var sname = document.getElementById('sname').value;
+      var school = document.getElementById('school').value;
+			var email = document.getElementById('email').value;
+			var gender = document.getElementById('gender').value;
+			var classs = document.getElementById('classs').value;
+			var courses = document.getElementById('course').value;
+
+			if(sname == "")
+			{
+				alert('PLEASE FILL THE NAME to proceed');
+				return false;
+			}
+
+			if(school == "")
+			{
+				alert('PLEASE FILL THE School to proceed');
+				return false;
+			}
+      if(email == "")
+			{
+				alert('PLEASE FILL THE EMAiL area to proceed');
+				return false;
+			}
+			if(gender == "")
+			{
+				alert('PLEASE FILL THE Gender to proceed');
+				return false;
+			}
+			if(classs== "")
+			{
+				alert('PLEASE FILL THE Education status to proceed');
+				return false;
+			}
+			if(courses == "")
+			{
+				alert('PLEASE FILL THE SubjectofStudy to proceed');
+				return false;
+			}
+
+			if(sname.length<4)
+			{
+				alert('StudentName must be at least 4 characters to be valid in this field');
+				return false;
+			}
+			if(sname.length>15)
+			{
+				alert('StudentName must be less than 15 characters to be valid in this field');
+				return false;
+			}
+
+			else
+			{
+				return true;
+			}
+
+		}
+
+	</script>
+
+
+</center></body>
+</html>

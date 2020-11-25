@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE STUDENTLIST</title>
+</head>
+<body><center>
+
+	<form id="sup" onsubmit="return sCheck()" method="POST">
+
+    <table border="5">
+      <tr>
+        <td colspan="2"><h1>UPDATE STUDENTList</h1></td>
+      </tr>
+
+      <tr>
+				<td>ID</td>
+				<td><input type="text" readonly name="id" value="<%=students.id%>"></td>
+			</tr>
+			<tr>
+				<td>StudentName</td>
+				<td><input type="text" name="sname" value="<%=students.student_name%>" onkeypress='return onlyalphabets(event)' ></td>
+			</tr>
+			<tr>
+				<td>SCHOOL</td>
+				<td><input type="text" name="school" value="<%=students.student_academy%>"></td>
+			</tr>
+			<tr>
+				<td>EMAiL</td>
+				<td><input type="email" name="email" value="<%=students.email%>"></td>
+			</tr>
+      <tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gender" value="MaLe">MaLe
+							<input type="radio" name="gender" value="FeMaLe">FeMaLe</td>
+			</tr>
+      <tr>
+				<td>cLassofStudent</td>
+				<td><input type="text"  name="classs" value="<%=students.class%>"></td>
+			</tr>
+      <tr>
+				<td>COURSES</td>
+				<td><input type="text" name="course" value="<%=students.courses%>"></td>
+			</tr>
+      <tr></tr>
+			<tr>
+				<td><input type="submit" name="submit" value="UPDATE" onclick="return sCheck()"></td>
+				<td><a href="/dashboard/TP_Student_List">STUDENTList</a> </td>
+			</tr>
+	</table>
+
+  </form>
+
+  <script type="text/javascript">
+
+			/*ASCII code: 65-90>> UPPERCASE
+			8>>   Backspace,
+			95>>  underscore[_]*/
+
+			function onlyalphabets(e)
+			{
+			var sname=e.which||e.keycode;
+				if((sname>=65 && sname<=90) || (sname==95) || (sname>=97 && sname<=122) || sname==8)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+	</script>
+
+	<script>
+
+		function sCheck()
+		{
+
+			var sname = document.forms["sup"]["sname"].value;
+			var school = document.forms["sup"]["school"].value;
+			var email = document.forms["sup"]["email"].value;
+			var gender = document.forms["sup"]["gender"].value;
+			var classs = document.forms["sup"]["classs"].value;
+			var courses = document.forms["sup"]["course"].value;
+
+			if(sname == "")
+			{
+				alert('PLEASE FILL THE NAME to proceed');
+				return false;
+			}
+
+			if(school == "")
+			{
+				alert('PLEASE FILL THE School to proceed');
+				return false;
+			}
+      if(email == "")
+			{
+				alert('PLEASE FILL THE EMAiL area to proceed');
+				return false;
+			}
+			if(gender==""){
+				alert("Gender is BLANK !!");
+			return false;
+			}
+			if(classs== "")
+			{
+				alert('PLEASE FILL THE Education status to proceed');
+				return false;
+			}
+			if(courses == "")
+			{
+				alert('PLEASE FILL THE SubjectofStudy to proceed');
+				return false;
+			}
+
+			if(sname.length<4)
+			{
+				alert('StudentName must be at least 4 characters to be valid in this field');
+				return false;
+			}
+			if(sname.length>15)
+			{
+				alert('StudentName must be less than 15 characters to be valid in this field');
+				return false;
+			}
+
+			else
+			{
+				return true;
+			}
+
+		}
+
+	</script>
+
+</center></body>
+</html>

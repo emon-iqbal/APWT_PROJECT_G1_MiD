@@ -1,0 +1,19 @@
+body
+{
+  font-color: red;
+   background: rgb(255,154,53);
+  background-image: url("../BackPics/deL.png");
+  background-repeat: no-repeat;
+  background-size: 100% 640px;
+  /* background-image: url("./deL.png"); */
+}
+
+#tab1{
+  color: whitesmoke;
+  font-size: 25px;
+}
+#tab2{
+    color: whitesmoke;
+    font style: "Algerian";
+    background-color: red;
+  }

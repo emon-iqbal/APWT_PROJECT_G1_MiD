@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE REGIONS</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/CSS/TD_List.css">
+  <!-- <script type="text/javascript" src="/DEALit/js/val_TD.js"></script> -->
+</head>
+
+<body>
+	<form name="myform" onsubmit="return insertCheck();" method="POST">
+
+    <table border="5">
+      <tr>
+        <td colspan="2"><div id="of"><h1><center>UPDATE REGIONS</center></h1></div></td>
+      </tr>
+
+      <tr>
+				<td>ID</td>
+				<td><input type="text" readonly name="id" value="<%=td.td_id%>"></td>
+			</tr>
+			<tr>
+				<td>Region - NAME</td>
+				<td><input type="text" name="r_name" value="<%=td.r_name%>" onkeypress='return onlyalphabets(event)'></td>
+
+			</tr>
+			<tr>
+  				<td>Country</td>
+  				<td><input type="text" name="country" value="<%=td.country%>"></td>
+
+      </tr>
+      <tr>
+				<td>Continent</td>
+				<td><input type="text" name="continent" value="<%=td.continent%>"> </td>
+
+			</tr>
+      <tr>
+				<td>Area_CODE</td>
+				<td><input type="number" name="r_code" value="<%=td.r_code%>"></td>
+			</tr>
+      <tr></tr>
+
+			<tr>
+				<td><div id="of"><a href="/td_DASHBOARD/TD_Available_Regions">Check RegionLIST</a> </div></td>
+				<td><div id="upom"><input type="submit" id="submit" name="submit" value="UPDATE" onclick="insert()"></div></td>
+			</tr>
+	</table>
+
+  </form>
+
+    <script type="text/javascript">
+
+        /*ASCII code: 65-90>> UPPERCASE
+        8>>   Backspace,
+        95>>  underscore[_]*/
+
+        function onlyalphabets(e)
+        {
+        var r_name=e.which||e.keycode;
+          if((r_name>=65 && r_name<=90) || (r_name==95) || (r_name>=97 && r_name<=122) || r_name==8)
+          {
+            return true;
+          }
+          else
+          {
+            return false;
+          }
+        }
+    </script>
+
+    <script>
+
+      function insertCheck()
+      {
+        var name = document.getElementById('r_name').value;
+        var email = document.getElementById('country').value;
+        var gender = document.getElementById('continent').value;
+        var education = document.getElementById('r_code').value;
+
+        if(name == "")
+        {
+          alert('PLEASE FILL THE Region_NAME to proceed');
+          return false;
+        }
+        if(email == "")
+        {
+          alert('PLEASE FILL THE Country where this region is situated');
+          return false;
+        }
+        if(gender == "")
+        {
+          alert('PLEASE FILL THE Continent  to proceed');
+          return false;
+        }
+        if(education == "")
+        {
+          alert('PLEASE FILL THE Area Code/ ZIP Code to proceed');
+          return false;
+        }
+
+        if(name.length<4)
+        {
+          alert('Name must be at least 4 characters to be valid in this field');
+          return false;
+        }
+        if(name.length>15)
+        {
+          alert('Name must be less than 15 characters to be valid in this field');
+          return false;
+        }
+        else
+        {
+          return true;
+        }
+
+      }
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+<!-- <style type="text/css">
+table{
+	color: whitesmoke;
+	background-color: blue;
+}
+#upom
+{
+	text-align: center;
+	color: whitesmoke;
+	background-color: orange;
+	background-size: auto;
+	border: 10px solid;
+}
+#upom a
+{
+	color: black;
+	font-size: 20px;
+}
+</style> -->

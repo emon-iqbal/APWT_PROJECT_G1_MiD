@@ -1,0 +1,152 @@
+	body
+	{
+		background: rgb(255,154,53);
+		background-image: url("../BackPics/Reg.jpg");
+		background-repeat: no-repeat;
+		background-size: 100% 105%;
+		/* background-image: url("./assets/249927_moving-wallpapers-windows-10.jpg"); */
+	}
+
+	#reg h1
+	{
+	  text-align: center;
+		height: 60px;
+		font-size: 50px;
+	  border-radius: 150px;
+	  border-top: 100px;
+	  color: yellow;
+	  background: black;
+	}
+
+	#reg
+	{
+  	text-align:left;
+  	width: 1100px;
+		height: 570px;
+    margin-top: -25px;
+  	border: 3px solid #918274;
+  	border-radius: 50px;
+  	border-top: 100px;
+  	color: white;
+  	font-size: 30px;
+  	background: rgb(0,0,112);
+	}
+
+	#name
+	{
+		text-align: left;
+		width: 600px;
+	  border: 3px solid #918274;
+	  border-radius: 50px;
+	  border-top: 100px;
+	  color: rgb(0,0,112);
+	  font-size: 30px;
+	  background: white;
+	}
+	#pass
+	{
+	  width: 600px;
+	  border: 3px solid #918274;
+	  border-radius: 50px;
+	  border-top: 100px;
+	  color: rgb(0,0,112);
+	  font-size: 30px;
+	  background: white;
+	}
+	#email
+	{
+	  width: 600px;
+	  border: 3px solid #918274;
+	  border-radius: 50px;
+	  border-top: 100px;
+	  color: rgb(0,0,112);
+	  font-size: 30px;
+	  background: white;
+	}
+	#gen
+	{
+		text-align: center;
+		width: 120px;
+	  border: 3px solid #918274;
+	  border-radius: 50px;
+	  border-height: 250px;
+	  color: rgb(0,0,112);
+	  font-size: 30px;
+	  background: white;
+	}
+	#edu
+	{
+		text-align: center;
+		width: 200px;
+		border: 3px solid #918274;
+		border-radius: 50px;
+		border-height: 250px;
+		color: rgb(0,0,112);
+		font-size: 30px;
+		background: white;
+	}
+	#tou
+	{
+		text-align: center;
+		width: 250px;
+		border: 3px solid #918274;
+		border-radius: 50px;
+		border-height: 250px;
+		color: rgb(0,0,112);
+		font-size: 30px;
+		background: white;
+	}
+	#pic
+	{
+		text-align: center;
+		width: 250px;
+		border: 3px solid #918274;
+		border-radius: 50px;
+		border-height: 250px;
+		color: rgb(0,0,112);
+		font-size: 30px;
+		background: white;
+	}
+  #picfile
+  {
+    text-align: center;
+		width: 450px;
+		border: 3px solid #918274;
+		border-radius: 50px;
+		border-height: 250px;
+		color: rgb(0,0,112);
+		font-size: 30px;
+		background: white;
+  }
+
+	#submit
+	{
+		text-align: center;
+		height: 60px;
+	  width: 500px;
+		padding-bottom: 25px;
+	  font-family: "Algerian";
+	  font-size: 35px;
+		color: yellow;
+		border:  none;
+		border-align: left;
+		border-radius: 5px;
+	}
+	#submit input
+	{
+		font-family: "Algerian";
+	  font-size: 35px;
+		color: yellow;
+	  background-color: black;
+
+	}
+	a
+	{
+	  height: 60px;
+	  margin: 5px 10%;
+	  font-size: 35px;
+	  color: red;
+	  background-color: yellow;
+	  text-decoration: underline-bold;
+	  border-radius: 5px;
+	}

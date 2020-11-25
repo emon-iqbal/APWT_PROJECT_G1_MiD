@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD NEW Trans_Dealer</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/css/tdinsert.css">
+</head>
+
+<body><center>
+
+	<form id="Tinsert_form" method="post" onsubmit="return insertCheck(); ">
+
+
+		<h1>NEW TransDealer</h1>
+		<div>
+			 <input type="text" id="tdname" name="tdname" placeholder="TD NAME" onkeypress='return onlyalphabets(event)'/>
+		</div>
+		<div>
+			 <input type="email" id="email" name="email" placeholder="email">
+		</div>
+		<div>
+			<input type="text" id="gender" name="gender" placeholder="gender">
+		</div>
+		<div>
+			<input type="text" id="education" name="education" placeholder="education">
+		</div>
+		<br>
+		<div>
+			<button type="submit" id="submit" name="submit" onclick="insert()">I N S E R T</button>
+			<a href="/td_DASHBOARD/TD_Lists">TRANSPORT DEALERS</a>
+		</div>
+  </form>
+
+<script type="text/javascript">
+
+    /*ASCII code: 65-90>> UPPERCASE
+    8>>   Backspace,
+    95>>  underscore[_]*/
+
+    function onlyalphabets(e)
+    {
+    var tdname=e.which||e.keycode;
+      if((tdname>=65 && tdname<=90) || (tdname==95) || (tdname>=97 && tdname<=122) || tdname==8)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+</script>
+
+<script>
+
+  function insertCheck()
+  {
+    var name = document.getElementById('tdname').value;
+    var email = document.getElementById('email').value;
+    var gender = document.getElementById('gender').value;
+    var education = document.getElementById('education').value;
+
+    if(name == "")
+    {
+      alert('PLEASE FILL THE TD_NAME to proceed');
+      return false;
+    }
+    if(email == "")
+    {
+      alert('PLEASE FILL THE email area to proceed');
+      return false;
+    }
+    if(gender == "")
+    {
+      alert('PLEASE FILL THE gender to proceed');
+      return false;
+    }
+    if(education == "")
+    {
+      alert('PLEASE FILL THE education to proceed');
+      return false;
+    }
+
+    if(name.length<4)
+    {
+      alert('TDName must be at least 4 characters to be valid in this field');
+      return false;
+    }
+    if(name.length>15)
+    {
+      alert('TDName must be less than 15 characters to be valid in this field');
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+
+  }
+
+</script>
+
+
+</center></body>
+</html>

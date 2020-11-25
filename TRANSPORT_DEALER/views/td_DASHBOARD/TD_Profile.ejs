@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TD PROFILE</title>
+ <link rel="stylesheet" type="text/css" href="/DEALit/css/TD_Profile.css">
+
+<!-- <style type="text/css">
+
+</style> -->
+
+</head>
+
+<body><center>
+
+		<table>
+				<tr>
+					<!-- <td><center><div id = "p1"><a href ="/td_DASHBOARD/tdPHOTO">PROFILE  PIC</a></div></center></td> -->
+					<td><center><div id = "p1"><img src="../assets/BackPics/<%= travelbliss_users.picture %>"  height='180' width='150'/></div></center></td>
+				</tr>
+		</table>
+
+		<table border="5">
+				<tr>
+					<td colspan="2"><h1>TD_PROFILE</h1></td>
+				</tr>
+				<tr>
+					<td><b>ID: </b></td>
+					<td><div id="td"><%= travelbliss_users.userid %></div></td>
+				</tr>
+				<tr>
+					<td><b>Username: </b></td>
+					<td><div id="td"><%= travelbliss_users.username %></div></td>
+				</tr>
+				<tr>
+					<td><b>Email: </b></td>
+					<td><div id="td"><%= travelbliss_users.email %></div></td>
+				</tr>
+				<tr>
+					<td><b>Gender: </b></td>
+					<td><div id="td"><%= travelbliss_users.gender %></div></td>
+				</tr>
+				<tr>
+					<td><b>Education: </b></td>
+					<td><div id="td"><%=travelbliss_users.education %></div></td>
+				</tr>
+				<tr>
+					<td><div id="td"><b>Type: </b></div></td>
+					<td><%= travelbliss_users.type %></td>
+				</tr>
+				<tr>
+					<td><div id="home"><a href="/td_DASHBOARD">H O M E</a></div></td>
+					<td colspan="2"><center>
+							<div id="wh"><a href="/td_DASHBOARD/TD_Profile/update/<%= travelbliss_users.userid %>"> U P D A T E</a></div>
+					</center></td>
+				</tr>
+
+			</table>
+
+</center></body>
+</html>

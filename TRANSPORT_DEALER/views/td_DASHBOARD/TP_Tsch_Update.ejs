@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE TEACHER_SCHEDULE</title>
+	<link rel="stylesheet" type="text/css" href="/assets/style.css">
+
+<style type="text/css">
+table{
+	color: whitesmoke;
+	background-color: blue;
+}
+#upom
+{
+	text-align: center;
+	color: whitesmoke;
+	background-color: orange;
+	background-size: auto;
+	border: 10px solid;
+}
+#upom a
+{
+	color: black;
+	font-size: 20px;
+}
+</style>
+
+</head>
+<body><center>
+
+	<form name="upsch" onsubmit="return upCheck()" method="POST">
+
+    <table border="5">
+      <tr>
+        <td colspan="2"><h1>UPDATE TEACHER_SCHEDULES</h1></td>
+      </tr>
+      <tr>
+				<td>ID</td>
+				<td><input type="text" readonly name="id" value="<%=tsch.id%>"></td>
+			</tr>
+			<tr>
+				<td>TUTOR_Name</td>
+				<td><input type="text" name="name" value="<%=tsch.NAME%>" onkeypress='return onlyalphabets(event)' ></td>
+			</tr>
+      <tr>
+				<td>DAYS</td>
+				<td><input type="text" name="day" value="<%=tsch.DAY%>" onkeypress='return onlyalphabets2(event)'></td>
+			</tr>
+			<tr>
+        <td>Schedules</td>
+            <td>
+              <input type="time" name="time" value="<%=tsch.TIME%>">
+            </td>
+      </tr>
+
+      <tr>
+				<td><div id="upom"><input type="submit" name="submit" value="UPDATE"></div></td>
+				<td><div id="upom"><a href="/dashboard/TP_Teacher_Schedules">SCHEDULES</a></div></td>
+			</tr>
+	</table>
+
+  </form>
+
+
+	<script type="text/javascript">
+
+	function onlyalphabets(e)
+	{
+			var name=e.which||e.keycode;
+
+
+	/*ASCII code: 		65-90>> UPPERCASE
+						8>>   	Backspace,
+						95>>  	underscore[_]
+						32>>	space
+	*/
+
+			if((name>=65 && name<=90) || (name==95) || (name==32) || (name>=97 && name<=122) || (name==8))
+			{
+				return true;
+			}
+			else
+			{
+				alert("only >>uppercase, >>lowercase,   >>space, >>backspace,  >>underscore [  _  ] is acceptable here");
+				return false;
+			}
+
+	}
+
+	</script>
+
+	<script type="text/javascript">
+
+	function onlyalphabets2(e)
+	{
+			var days=e.which||e.keycode;
+
+
+	/*ASCII code: 		65-90>> UPPERCASE
+						8>>   	Backspace,
+
+						32>>	space
+						44>> coma [,]
+	*/
+
+			if((days>=65 && days<=90) || (days==44) || (days==32) || (days>=97 && days<=122) || (days==8))
+			{
+				return true;
+			}
+			else
+			{
+				 alert("only >>uppercase, >>lowercase,   >>space, >>backspace,  >>comma [,] is acceptable here");
+				return false;
+			}
+
+	}
+
+	</script>
+
+  <script>
+
+    function upCheck()
+    {
+      var name = document.forms["upsch"]["name"].value;
+      var days = document.forms["upsch"]["day"].value;
+      var time = document.forms["upsch"]["time"].value;
+
+      if(name == "")
+      {
+        alert('PLEASE FILL THE TUTOR_NAME to proceed');
+        return false;
+      }
+
+			      if(name.length>15)
+			      {
+			        alert('NAME must be less than 15 characters to be valid in this field');
+			        return false;
+			      }
+
+			      if(name.length<4)
+			      {
+			        alert('NAME must be at least 4 characters to be valid in this field');
+			        return false;
+			      }
+      if(days == "")
+      {
+        alert('PLEASE FILL THE DAYS to proceed');
+        return false;
+      }
+			if(time == "")
+			{
+				alert('PLEASE FILL THE schedules to proceed');
+				return false;
+			}
+      else
+      {
+        return true;
+      }
+
+    }
+
+  </script>
+
+</center></body>
+</html>

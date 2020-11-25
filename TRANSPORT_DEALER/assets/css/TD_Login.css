@@ -1,0 +1,70 @@
+body
+{
+	background: rgb(0,128,128);
+	 background-image: url("../BackPics/Login.jpg");
+	 background-repeat: no-repeat;
+   background-size: 100% 640px;
+ }
+#LOGIN_form h1
+{
+	background-color: rgb(0,128,128);
+	color: white;
+}
+
+#LOGIN_form
+{
+  width: 900px;
+	margin-top: 50px;
+  /* margin: 100px; */
+  /* padding-bottom: -50px; */
+  border: 1px solid #918274;
+  border-radius: 20px;
+  color: black;
+  font-family: "Elephant", Times, serif;
+  font-size: 25px;
+  background: rgb(192,192,192);
+}
+#LOGIN_form input
+{
+	text-align: center;
+
+
+}
+
+#name
+{
+	width: 500px auto;
+  height: 40px;
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 30px;
+}
+#password
+{
+	width: 500px auto;
+  height: 40px;
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 30px;
+}
+#submit
+{
+  height: 50px;
+  width: 200px;
+  font-family: "Algerian";
+  font-size: 40px;
+  color: rgb(0,255,0);
+  background: black;
+  border: none;
+  border-radius: 5px;
+}
+a
+{
+
+  height: 50px;
+  width: 40px;
+  font-size: 30px;
+  color: red;
+  background-color: rgb(255,255,33);
+  text-decoration: underline-bold;
+  border-radius: 5px;
+
+}

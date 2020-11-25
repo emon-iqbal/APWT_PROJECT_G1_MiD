@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD NEW VEHiCLES</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/css/tdinsert.css">
+</head>
+
+<body><center>
+
+	<form id="Tinsert_form" method="post" onsubmit="return insertCheck(); ">
+
+
+		<h1>NEW VEHICLES</h1>
+		<div>
+			 <input type="text" id="tdname" name="v_name" placeholder="Vehicle NAME" onkeypress='return onlyalphabets(event)'/>
+		</div>
+		<div>
+			 <input type="text" id="email" name="v_type" placeholder="TYPES of VEHiCLES">
+		</div>
+		<div>
+			<input type="text" id="gender" name="v_distance" placeholder="Routes TO TraveL">
+		</div>
+		<div>
+			<input type="number" id="education" name="v_cost" placeholder="Cost of TRAVEL">
+		</div>
+		<br>
+		<div>
+			<button type="submit" id="submit" name="submit" onclick="insert()">I N S E R T</button>
+			<a href="/td_DASHBOARD/TD_Vehicles">Vehicle-List</a>
+		</div>
+  </form>
+
+<script type="text/javascript">
+
+    /*ASCII code: 65-90>> UPPERCASE
+    8>>   Backspace,
+    95>>  underscore[_]*/
+
+    function onlyalphabets(e)
+    {
+    var v_name=e.which||e.keycode;
+      if((v_name>=65 && v_name<=90) || (v_name==95) || (v_name>=97 && v_name<=122) || v_name==8)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+</script>
+
+<script>
+
+  function insertCheck()
+  {
+    var name = document.getElementById('v_name').value;
+    var email = document.getElementById('v_type').value;
+    var gender = document.getElementById('v_distance').value;
+    var education = document.getElementById('v_cost').value;
+
+    if(name == "")
+    {
+      alert('PLEASE FILL THE VEHICLE_NAME to proceed');
+      return false;
+    }
+    if(email == "")
+    {
+      alert('PLEASE FILL THE TYPES of VEHiCLES area to proceed');
+      return false;
+    }
+    if(gender == "")
+    {
+      alert('PLEASE FILL THE Route  to proceed');
+      return false;
+    }
+    if(education == "")
+    {
+      alert('PLEASE FILL THE expense of travel to proceed');
+      return false;
+    }
+
+    if(name.length<4)
+    {
+      alert('Name must be at least 4 characters to be valid in this field');
+      return false;
+    }
+    if(name.length>15)
+    {
+      alert('Name must be less than 15 characters to be valid in this field');
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+
+  }
+
+</script>
+
+
+</center></body>
+</html>

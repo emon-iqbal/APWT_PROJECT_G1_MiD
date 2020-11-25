@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEACHING HOURS</title>
+
+  <script type="text/javascript">
+function insertCheck()
+{
+	var name = document.forms["Tinsert_form"]["name"].value;
+	var days = document.forms["Tinsert_form"]["day"].value;
+	var time = document.forms["Tinsert_form"]["time"].value;
+
+	if(name==""){
+	alert("TUTOR NAME is BLANK!!");
+	return false;
+}
+if(name.length<3){
+	alert("TUTOR NAME must be at least 3 Letters");
+	return false;
+}
+if(days == "")
+{
+	alert("DAY field  is BLANK!!");
+	return false;
+}
+if(days.length<3){
+	alert("DAY must be at least 3 Letters");
+	return false;
+}
+if(time == "")
+{
+	alert("TIME is BLANK!!");
+	return false;
+}
+else
+{
+	return true;
+}
+
+}
+
+</script>
+
+<script type="text/javascript">
+
+function onlyalphabets(e)
+{
+		var name=e.which||e.keycode;
+
+
+/*ASCII code: 		65-90>> UPPERCASE
+					8>>   	Backspace,
+					95>>  	underscore[_]
+					32>>	space
+*/
+
+		if((name>=65 && name<=90) || (name==95) || (name==32) || (name>=97 && name<=122) || (name==8))
+		{
+			return true;
+		}
+		else
+		{
+			alert("only >>uppercase, >>lowercase,   >>space, >>backspace,  >>underscore [  _  ] is acceptable here");
+			return false;
+		}
+
+}
+
+</script>
+
+<script type="text/javascript">
+
+function onlyalphabets2(e)
+{
+		var days=e.which||e.keycode;
+
+
+/*ASCII code: 		65-90>> UPPERCASE
+					8>>   	Backspace,
+
+					32>>	space
+					44>> coma [,]
+*/
+
+		if((days>=65 && days<=90) || (days==44) || (days==32) || (days>=97 && days<=122) || (days==8))
+		{
+			return true;
+		}
+		else
+		{
+			 alert("only >>uppercase, >>lowercase,   >>space, >>backspace,  >>comma [,] is acceptable here");
+			return false;
+		}
+
+}
+
+</script>
+
+<style rel="stylesheet">
+
+body
+{
+	background: rgb(196,188,150);
+}
+#Tinsert_form h1
+{
+  text-align: center;
+  margin: 10px auto;
+  color: white;
+  background: black;
+}
+#Tinsert_form
+{
+  width: 1200px;
+  margin: 0px auto;
+  border: 1px solid #918274;
+  border-radius: 20px;
+  color: blue;
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 20px;
+  background: rgb(196,188,150);
+}
+#Tinsert_form input
+{
+
+  width: 600px;
+  height: 35px;
+  margin: 5px 10%;
+  color: blue;
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 25px;
+}
+#submit
+{
+  height: 60px;
+  width: 400px;
+  margin: 10px 10%;
+  font-family: "IMPACT";
+  font-size: 35px;
+  color: white;
+  background: rgb(255,0,0);
+  border: none;
+  border-radius: 5px;
+}
+
+#days
+{
+  text-align: left;
+  width: 900px;
+  color: blue;
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+#days input
+{
+  text-align: left;
+  width: 35px;
+  height: 25px;
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 20px;
+}
+a
+{
+
+  height: 60px;
+  width: 100px;
+  margin: 5px 10%;
+  font-size: 30px;
+  color: red;
+  background-color: rgb(255,255,33);
+  text-decoration: underline-bold;
+  border-radius: 5px;
+
+}
+
+
+</style>
+</head>
+
+<body><center>
+
+	<form name="Tinsert_form" method="post" onsubmit="return insertCheck();">
+
+
+		<center><h1>ADD NEW SCHEDULES</h1></center>
+		<div>
+			TUTOR NAME: <input type="text" id="tname" name="name" placeholder="TUTOR NAME" onkeypress='return onlyalphabets(event)'>
+		</div>
+		<div>
+				DAYS: <input type="text"  id="days" name="day" placeholder="TUiTiON DAYS" onkeypress='return onlyalphabets2(event)'>
+		</div>
+    <div>
+			TIMES: <input type="time" id="stime" name="time" placeholder="TIME OF ARRIVAL" >
+		</div>
+		<div>
+			<button style="cursor:move" type="submit" name="submit" id="submit" >INSERT NEW SCHEDULES</button>
+			<br><a href="/dashboard/TP_TEACHER_Schedules">AVAILABLE SCHEDULES</a>
+  </div>
+
+	</form>
+
+</center></body>
+</html>

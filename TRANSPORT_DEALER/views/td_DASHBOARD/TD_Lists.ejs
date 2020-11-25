@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TD LIST</title>
+ <link rel="stylesheet" type="text/css" href="/DEALit/css/TD_List.css">
+
+</head>
+
+<body><center>
+	<form>
+
+	<table border="5">
+		<tr>
+			<td><div id="of"><h1><center><a href="/td_DASHBOARD/TD_Lists/insert">ADD NEW TD</a></center></h1></div></td>
+			<td colspan="6"><h1>TRANSPORT DEALERS</h1>
+				<div id="no"><u>TOTAL TRANSPORT DEALERS: <%= td.length %></u></div>
+      </td>
+		</tr>
+
+		<tr>
+			<th>ID</th>
+			<th>TD_NAME</th>
+			<th>EmaiL</th>
+			<th>Gender</th>
+			<th>Education</th>
+			<th colspan="6">ACTiONS</th>
+		</tr>
+
+		<% for(var i=0; i < td.length; i++){ %>
+		<tr>
+			<td><%= td[i].td_id %></td>
+			<td><%= td[i].td_name %></td>
+			<td><%= td[i].email %></td>
+			<td><%= td[i].gender %></td>
+			<td><%= td[i].education %></td>
+			<td colspan="6"><center>
+				<div id="link">
+				<a href="/td_DASHBOARD/TD_Lists/edit/<%= td[i].td_id%>">UPDATE</a> ~
+				<a href="/td_DASHBOARD/TD_Lists/delete/<%= td[i].td_id%>">DELETE</a>
+			</div>
+			</center></td>
+		</tr>
+		<% } %>
+
+		<tr>
+				<td colspan="8"><div id="of"><a href="/td_DASHBOARD">H O M E</a></div></td>
+				<td colspan="8">	<a href="javascript:pdfToHTML()">Save as PDF</a><br/></td>
+		</tr>
+			</table>
+
+		</form>
+</center></body>
+
+<script src="/assets/js/jquery-3.5.1.js"></script>
+<script src="/assets/js/pdfFromHTML.js"></script>
+<script src="/assets/js/jspdf.js"></script>
+</html>

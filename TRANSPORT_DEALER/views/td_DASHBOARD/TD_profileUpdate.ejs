@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE PROFILE</title>
+	<link rel="stylesheet" type="text/css" href="/DEALit/css/TD_Profile.css">
+		<script type="text/javascript" src="/DEALit/js/val_profile.js"></script>
+
+	<!-- <script type="text/javascript">
+
+</script> -->
+
+<!-- <style type="text/css">
+
+</style> -->
+
+</head>
+<body><center>
+	<form name="myform" onsubmit="return valid()" method="post" enctype="multipart/form-data">
+		<table border="8">
+			<tr><td colspan="2"><h1><center>UPDATE PROFILE</center></h1></td></tr>
+			<tr>
+				<td>ID</td>
+				<td><input type="text" readonly name="userid" readonly value="<%=travelbliss_users.userid%>"></td>
+			</tr>
+			<tr>
+				<td>USERNAME</td>
+				<td><input type="text" name="username" value="<%=travelbliss_users.username%>"></td>
+			</tr>
+			<tr>
+				<td>PASSWORD :</td>
+				<td><input type="text" name="password" value="<%=travelbliss_users.password%>"></td>
+			</tr>
+			<tr>
+			<tr>
+				<td>EMAIL :</td>
+				<td><input type="text" name="email" value="<%=travelbliss_users.email%>"></td>
+			</tr>
+			<tr>
+				<tr>
+					<td>GENDER :</td>
+					<td><input type="radio" name="gender" value="MaLe">MaLe
+									<input type="radio" name="gender" value="FemaLe">FemaLe</td>
+				</tr>
+			<tr>
+			<tr>
+				<td>EDUCATION :</td>
+				<td><input type="text" name="education" value="<%=travelbliss_users.education%>"></td>
+			</tr>
+			<tr>
+				<td>TYPE :</td>
+				<td><input type="text" readonly name="type" value="<%=travelbliss_users.type%>"></td>
+			</tr>
+			<!-- <tr>
+				<td><b>UPDATE PROFILE PiCTURE</b></td>
+				<td><input type="file" readonly name="file" accept=""/></td>
+			</tr> -->
+			<tr>
+				<td><center><div id="prolink"><a href="/td_DASHBOARD/TD_Profile">PROFILE</a></div></center></td>
+				<td><center><div id="prolink"><input type="submit" name="submit" value="UPDATE"></div></center></td>
+			</tr>
+		</table>
+	</form>
+</center></body>
+</html>

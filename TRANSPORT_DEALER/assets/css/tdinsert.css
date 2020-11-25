@@ -1,0 +1,52 @@
+body
+{
+	background: rgb(196,188,150);
+}
+#Tinsert_form h1
+{
+  text-align: center;
+}
+#Tinsert_form
+{
+  width: 1200px;
+  margin: 20px auto;
+  border: 1px solid #918274;
+  border-radius: 20px;
+  color: black;
+  font-size: 30px;
+  background: rgb(196,188,150);
+}
+#Tinsert_form input
+{
+
+  width: 600px;
+  height: 35px;
+  margin: 5px 10%;
+  font-family: "Comic Sans MS", Times, serif;
+  font-size: 25px;
+}
+#submit
+{
+  height: 60px;
+  width: 200px;
+  margin: 5px 10%;
+  font-family: "IMPACT";
+  font-size: 35px;
+  color: white;
+  background: rgb(255,0,0);
+  border: none;
+  border-radius: 5px;
+}
+a
+{
+
+  height: 60px;
+  width: 100px;
+  margin: 5px 10%;
+  font-size: 35px;
+  color: red;
+  background-color: rgb(255,255,33);
+  text-decoration: underline-bold;
+  border-radius: 5px;
+
+}

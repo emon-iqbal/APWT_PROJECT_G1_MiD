@@ -1,0 +1,8 @@
+body
+{
+   background: rgb(255,154,53);
+  background-image: url("./tpic.png");
+  background-repeat: no-repeat;
+  background-size: 100% 640px;
+  /* background-image: url("./deL.png"); */
+}

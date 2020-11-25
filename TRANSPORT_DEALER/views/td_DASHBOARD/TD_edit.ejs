@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE TDLIST</title>
+	<link rel="stylesheet" type="text/css" href="/DEALit/CSS/TD_List.css">
+	<script type="text/javascript" src="/DEALit/js/val_TD.js"></script>
+</head>
+<body><center>
+
+	<form name="myform" onsubmit="return upCheck()" method="POST">
+
+    <table border="5">
+      <tr>
+        <td colspan="2"><div id="of"><h1><center>UPDATE TDLIST</center></h1></div></td>
+      </tr>
+
+      <tr>
+				<td>ID</td>
+				<td><input type="text" readonly name="id" value="<%=td.td_id%>"></td>
+			</tr>
+			<tr>
+				<td>TD - NAME</td>
+				<td><input type="text" name="tdname" value="<%=td.td_name%>" onkeypress='return onlyalphabets(event)'></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email" value="<%=td.email%>"></td>
+			</tr>
+      <tr>
+				<td>GENDER</td>
+				<td><div id="of"><input type="radio" name="gender" value="MaLe">MaLe
+								<input type="radio" name="gender" value="Female">Female</div></td>
+			</tr>
+      <tr>
+				<td>Education</td>
+				<td><input type="text" name="education" value="<%=td.education%>"></td>
+			</tr>
+      <tr></tr>
+
+			<tr>
+				<td><div id="of"><a href="/td_DASHBOARD/TD_Lists">Check TDLIST</a> </div></td>
+				<td><div id="upom"><input type="submit" id="submit" name="submit" value="UPDATE"></div></td>
+			</tr>
+
+	</table>
+
+  </form>
+
+</center></body>
+</html>
+
+
+
+
+<!-- <style type="text/css">
+table{
+	color: whitesmoke;
+	background-color: blue;
+}
+#upom
+{
+	text-align: center;
+	color: whitesmoke;
+	background-color: orange;
+	background-size: auto;
+	border: 10px solid;
+}
+#upom a
+{
+	color: black;
+	font-size: 20px;
+}
+</style> -->

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE TUITION</title>
+</head>
+<body><center>
+	<form name="avup" onsubmit="return upCheck()" method="POST">
+
+    <table border="5">
+      <tr>
+        <td colspan="2"><h1>UPDATE Tuitions</h1></td>
+      </tr>
+
+      <tr>
+				<td>seriaL</td>
+				<td><input type="text" readonly name="serial" value="<%=available.serial%>"/></td>
+			</tr>
+			<tr>
+				<td>TutorName</td>
+				<td><input type="text" name="tname" value="<%=available.tutors%>" onkeypress="return onlyalphabets(event)"></td>
+			</tr>
+			<tr>
+				<td>StudentName</td>
+				<td><input type="text" name="sname" value="<%=available.students%>"></td>
+			</tr>
+			<tr>
+				<td>cLassofStudent</td>
+				<td><input type="text" name="classofS" value="<%=available.s_class%>"></td>
+			</tr>
+      <tr>
+				<td>COURSES</td>
+				<td><input type="text" name="sub" value="<%=available.courses%>"></td>
+			</tr>
+      <tr>
+				<td>AREA</td>
+				<td><input type="text" name="area" value="<%=available.tuition_area%>"></td>
+			</tr>
+      <tr></tr>
+			<tr>
+				<td><input type="submit" name="submit" value="UPDATE"></td>
+				<td><a href="/dashboard/TP_Available_Tuitions">Check TUiTiONS</a> </td>
+			</tr>
+	</table>
+
+  </form>
+
+  <script type="text/javascript">
+
+      /*ASCII code: 65-90>> UPPERCASE
+      8>>   Backspace,
+      95>>  underscore[_]*/
+
+      function onlyalphabets(e)
+      {
+      var tname=e.which||e.keycode;
+        if((tname>=65 && tname<=90) || (tname==95) || (tname>=97 && tname<=122) || tname==8)
+        {
+          return true;
+        }
+        else
+        {
+					alert("only [a_z]  ~  [A_Z ] ~  [  _  ]  ~  [backspace] is allowed");
+          return false;
+        }
+      }
+  </script>
+
+  <script type="text/javascript">
+
+      /*ASCII code: 65-90>> UPPERCASE
+      8>>   Backspace,
+      95>>  underscore[_]*/
+
+      function onlyalphabets2(e)
+      {
+      var sname=e.which||e.keycode;
+        if((sname>=65 && sname<=90) || (sname==95) || (sname>=97 && sname<=122) || sname==8)
+        {
+          return true;
+        }
+        else
+        {
+					alert("only [a_z]  ~  [A_Z ] ~  [  _  ]  ~  [backspace] is allowed");
+					return false;
+        }
+      }
+  </script>
+
+
+  <script type="text/javascript">
+    function upCheck()
+    {
+			var Tutorname = document.forms["avup"]["tname"].value;
+			var studentName = document.forms["avup"]["sname"].value;
+			var cLassofS = document.forms["avup"]["classofS"].value;
+			var sub = document.forms["avup"]["sub"].value;
+			var area = document.forms["avup"]["area"].value;
+
+      if(Tutorname == "")
+      {
+        alert('PLEASE FILL THE TUTOR_NAME to proceed');
+        return false;
+      }
+			if(Tutorname.length<4)
+      {
+        alert('TutorName must be at least 4 characters to be valid in this field');
+        return false;
+      }
+      if(Tutorname.length>15)
+      {
+        alert('TutorName must be less than 15 characters to be valid in this field');
+        return false;
+      }
+			if(studentName == "")
+      {
+        alert('PLEASE FILL THE studentName area to proceed');
+        return false;
+      }
+			if(studentName.length<4)
+      {
+        alert('StudentName must be at least 4 characters to be valid in this field');
+        return false;
+      }
+			if(studentName.length>15)
+      {
+        alert('StudentName must be less than 15 characters to be valid in this field');
+        return false;
+      }
+      if(cLassofS == "")
+      {
+        alert('PLEASE FILL THE class of student to proceed');
+        return false;
+      }
+      if(sub == "")
+      {
+        alert('PLEASE FILL THE SubjectofTuition to proceed');
+        return false;
+      }
+			if(area == "")
+      {
+        alert('PLEASE FILL THE areaOFTuition to proceed');
+        return false;
+      }
+      else
+      {
+        return true;
+      }
+
+    }
+
+  </script>
+
+</center></body>
+</html>

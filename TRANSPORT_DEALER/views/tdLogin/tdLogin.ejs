@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="/DEALit/css/TD_Login.css">
+	<script type="text/javascript" src="/DEALit/js/val_Login.js"></script>
+	<!-- <script type="text/javascript" src="/DEALit/js/jquery-3.5.1.js"></script> -->
+
+<!-- <style rel="stylesheet">
+
+</style> -->
+
+		<!-- <script type="text/javascript">
+
+</script> -->
+
+</head>
+<body><center>
+		<form id="LOGIN_form" name="logform" onsubmit="return validate()" method="POST">
+			<fieldset>
+				<h1>LOGIN</h1>
+				<table>
+					<tr>
+						<th>USERNAME</th>
+						<td><input type="text" name="username" id="name" onkeypress='return onlyalphabets(event)' ></td>
+					</tr>
+					<tr>
+						<th>PASSWORD</th>
+						<td><input type="password" id="password" name="password"></td>
+					</tr>
+					<th><b>USER TYPE</b></th>
+				   <td><input type="radio" name="type" value="admin" />Admin
+						<input type="radio" name="type" value="HotelManager" />Hotel_Manager
+						<input type="radio" name="type" value="Trans_Dealer" />Transport_Dealer
+						<input type="radio" name="type" value="traveler" />Traveler</td>
+					</tr>
+					<tr></tr>
+					<tr></tr>
+					<tr>
+						<td><center><a href="/tdReg"><br>Registration</a></center></td>
+						<td><br><center><input type="submit" id="submit" name="submit" value="L O G I N"></center></td>
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+</center></body>
+</html>

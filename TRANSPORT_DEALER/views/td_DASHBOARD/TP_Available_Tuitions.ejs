@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PROVIDED TUITION</title>
+<link rel="stylesheet" type="text/css" href="/assets/style.css">
+<style type="text/css">
+
+	table{
+	border-collapse: collapse;
+	width: 100%;
+	color: white;
+	background-color: blue;
+	font-style: "Arial Rounded MT Bold";
+	font-size: 20px;
+	text-align: center;
+	}
+	#no
+	{
+		color: red;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
+	#of
+	{
+		color: blue;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
+	#link
+	{
+		color: blue;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
+
+</style>
+
+</head>
+
+<body><center>
+	<form>
+
+	<table border="5">
+		<tr>
+			<td><div id="of"><h1><center><a href="/dashboard/TP_Available_Tuitions/insert">OFFERED TuiTion</a></center></h1></div></td>
+			<td colspan="7"><h1>PROVIDED TUiTiONS</h1><div id="no"><u>TOTAL TUITIONS PROVIDED: <%= tuitionList.length %></u></div></td>
+		</tr>
+
+		<tr>
+			<th>Serials</th>
+			<th>TUTOR_NAME</th>
+			<th>STUDENT_NAME</th>
+			<th>CLASS of STUDY</th>
+			<th>COURSES</th>
+			<th>AREA_of_TUiTiON</th>
+			<th colspan="7">ACTiONS</th>
+		</tr>
+
+		<% for(var i=0; i < tuitionList.length; i++){ %>
+		<tr>
+			<td><%= tuitionList[i].serial %></td>
+			<td><%= tuitionList[i].tutors %></td>
+			<td><%= tuitionList[i].students %></td>
+			<td><%= tuitionList[i].s_class %></td>
+			<td><%= tuitionList[i].courses %></td>
+			<td><%= tuitionList[i].tuition_area %></td>
+			<td colspan="7"><center>
+				<div id="link">
+				<a href="/dashboard/TP_Available_Tuitions/edit/<%= tuitionList[i].serial%>">UPDATE</a> ~
+				<a href="/dashboard/TP_Available_Tuitions/delete/<%= tuitionList[i].serial%>">DELETE</a>
+			</div>
+			</center></td>
+		</tr>
+		<% } %>
+
+		<tr>
+				<td colspan="7"><div id="of"><a href="/dashboard">H O M E</div></a></td>
+		</tr>
+			</table>
+
+		</form>
+</center></body>
+</html>

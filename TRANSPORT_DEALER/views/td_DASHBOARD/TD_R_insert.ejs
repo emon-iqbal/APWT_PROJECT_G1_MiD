@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADD NEW REGIONS</title>
+  <link rel="stylesheet" type="text/css" href="/DEALit/css/tdinsert.css">
+</head>
+
+<body><center>
+
+	<form id="Tinsert_form" method="post" onsubmit="return insertCheck(); ">
+
+
+		<h1>NEW REGIONS</h1>
+		<div>
+			 <input type="text" id="tdname" name="r_name" placeholder="REGION_ NAME" onkeypress='return onlyalphabets(event)'/>
+		</div>
+		<div>
+			 <input type="text" id="email" name="country" placeholder="COUNTRY of Mentioned Region">
+		</div>
+		<div>
+			<input type="text" id="gender" name="continent" placeholder="Continent">
+		</div>
+		<div>
+			<input type="number" id="education" name="r_code" placeholder="Area Code">
+		</div>
+		<br>
+		<div>
+			<button type="submit" id="submit" name="submit" onclick="insert()">I N S E R T</button>
+			<a href="/td_DASHBOARD/TD_Available_Regions">Region-List</a>
+		</div>
+  </form>
+
+<script type="text/javascript">
+
+    /*ASCII code: 65-90>> UPPERCASE
+    8>>   Backspace,
+    95>>  underscore[_]*/
+
+    function onlyalphabets(e)
+    {
+    var r_name=e.which||e.keycode;
+      if((r_name>=65 && r_name<=90) || (r_name==95) || (r_name>=97 && r_name<=122) || r_name==8)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+</script>
+
+<script>
+
+  function insertCheck()
+  {
+    var name = document.getElementById('r_name').value;
+    var email = document.getElementById('country').value;
+    var gender = document.getElementById('continent').value;
+    var education = document.getElementById('r_code').value;
+
+    if(name == "")
+    {
+      alert('PLEASE FILL THE Region_NAME to proceed');
+      return false;
+    }
+    if(email == "")
+    {
+      alert('PLEASE FILL THE Country where this region is situated');
+      return false;
+    }
+    if(gender == "")
+    {
+      alert('PLEASE FILL THE Continent  to proceed');
+      return false;
+    }
+    if(education == "")
+    {
+      alert('PLEASE FILL THE Area Code/ ZIP Code to proceed');
+      return false;
+    }
+
+    if(name.length<4)
+    {
+      alert('Name must be at least 4 characters to be valid in this field');
+      return false;
+    }
+    if(name.length>15)
+    {
+      alert('Name must be less than 15 characters to be valid in this field');
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+
+  }
+
+</script>
+
+
+</center></body>
+</html>

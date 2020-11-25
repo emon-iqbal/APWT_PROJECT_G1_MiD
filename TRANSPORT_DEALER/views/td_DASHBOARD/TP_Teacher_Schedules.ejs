@@ -1,0 +1,131 @@
+<html>
+<head>
+	<title>TEACHING_HOURS</title>
+<link rel="stylesheet" type="text/css" href="/assets/style.css">
+  <style type="text/css">
+
+		table{
+  	border-collapse: collapse;
+  	width: 100%;
+  	color: white;
+  	background-color: blue;
+  	font-style: "Arial Rounded MT Bold";
+  	font-size: 20px;
+  	text-align: center;
+  	}
+  	#no
+  	{
+      color: red;
+  		background-color: white;
+      padding-bottom: 5px;
+  		font-style: "Arial Rounded MT Bold";
+  		font-size: 40px;
+  		text-align: center;
+
+  	}
+  	#of
+  	{
+  		color: blue;
+  		background-color: rgb(95,232,0);
+  		font-style: "Arial Rounded MT Bold";
+  		font-size: 20px;
+  		text-align: center;
+  	}
+		#of a
+		{
+			color: black;
+			background-color: rgb(95,232,0);
+		}
+		#lof
+		{
+  		color: blue;
+  		font-style: "Arial Rounded MT Bold";
+  		font-size: 20px;
+			font-style: bold;
+			text-align: center;
+  	}
+		#lof a
+		{
+			color: black;
+			background-color: red;
+			margin-left: 650px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		#th
+  	{
+  		color: red;
+  		background-color: black;
+  		font-style: "Arial Rounded MT Bold";
+  		font-size: 20px;
+  		text-align: center;
+  	}
+  	#link
+  	{
+  		color: blue;
+  		background-color: white;
+  		font-style: "Arial Rounded MT Bold";
+  		font-size: 20px;
+  		text-align: center;
+
+  	}
+    #link1
+  	{
+  		color: blue;
+  		font-style: "Arial Rounded MT Bold";
+  		font-size: 27px;
+      padding-top: 10px;
+  		text-align: center;
+
+  	}
+		#link1 a
+		{
+			color: black;
+			background-color: yellow;
+		}
+
+  </style>
+
+</head>
+<body><center>
+	<br>
+	<br>
+		<table border="4">
+			<tr><td colspan="5"><b><center><div id="no">TEACHER_SCHEDULE</div></center></b></td></tr>
+			<tr><center>
+				<td colspan="1"><div id="of"><a href="/dashboard"><b>HOME</b></a></div></td>
+				<td></td>
+				<td colspan="3"><div id="lof"><a href="/LogouT"><b>LOGOUT</b></a></div></td>
+			</center></tr>
+
+			<tr><center>
+        <td><div id="th"><center><b>ID</b></center></div></td>
+				<td><div id="th"><center><b>TUTOR_NAME</b></center></div></td>
+        <td><div id="th"><center><b>DAYS</b></center></div></td>
+        <td><div id="th"><center><b>SCHEDULES</b></center></div></td>
+				<td colspan="5"><div id="th"><center><b>----------</b></center></div></td>
+			</center></tr>
+
+<% for(var i=0; i < schedule.length; i++){ %>
+  		<tr>
+  			<td><%= schedule[i].id %></td>
+  			<td><%= schedule[i].NAME %></td>
+  			<td><%= schedule[i].DAY %></td>
+        <td><%= schedule[i].TIME %></td>
+  			<td colspan="5"><center>
+  				<div id="link">
+  				<a href="/dashboard/TP_Teacher_Schedules/update/<%= schedule[i].id%>">UPDATE</a> ~
+  				<a href="/dashboard/TP_Teacher_Schedules/delete/<%= schedule[i].id%>">DELETE</a>
+  			</div>
+  			</center></td>
+  		</tr>
+
+<% } %>
+      <tr>
+        <td colspan="5"><div id="link1"><a href="/dashboard/TP_Teacher_Schedules/insert">INSERT ~ NEW ~ TEACHING ~ HOURS</a></div></td>
+      </tr>
+
+	</table>
+
+</center></body>
+</html>

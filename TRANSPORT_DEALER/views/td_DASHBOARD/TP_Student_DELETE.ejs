@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DELETE CONFIRMATION</title>
+	<link rel="stylesheet" type="text/css" href="/assets/pic.css">
+	<style rel="stylesheet" type="text/css">
+	#tab1{
+		color: whitesmoke;
+		font-size: 25px;
+	}
+	#tab2{
+			color: whitesmoke;
+			font style: "Algerian";
+			background-color: red;
+		}
+	</style>
+</head>
+
+<body><center>
+  <form method="post">
+
+	<table id="tab1" border="5">
+    <tr>
+       <td colspan="2"><h1><center>!!! D E L E T E  ???</center></h1></td>
+    </tr>
+
+		<tr>
+				<td>ID</td>
+				<td><%= student.id %></td>
+			</tr>
+			<tr>
+				<td>NAME</td>
+				<td><%= student.student_name %></td>
+			</tr>
+			<tr>
+				<td>ACADEMY</td>
+				<td><%= student.student_academy%></td>
+			</tr>
+			<tr>
+				<td>EMAiL</td>
+				<td><%= student.email %></td>
+			</tr>
+      <tr>
+				<td>GENDER</td>
+				<td><%= student.gender %></td>
+			</tr>
+      <tr>
+				<td>cLassofStudent</td>
+				<td><%= student.class%></td>
+			</tr>
+      <tr>
+				<td>COURSES</td>
+				<td><%= student.courses %></td>
+			</tr>
+		</table>
+    <br>
+
+    <table border="3">
+      <tr>
+        <td colspan="3"><div id="tab2"><h2>YOU WANT TO DELETE THE ENTIRE ROW? YOU CANNOT UNDO !!</h2></div></td>
+      </tr>
+      <tr>
+        <td><input type="hidden" name="id" value="<%= student.id %>"></td>
+        <td><input type="submit" name="submit" value="D E L E T E"></td>
+        <td><a href="/dashboard/TP_Student_List">STUDENT-LIST</a></td>
+      </tr>
+    </table>
+
+  </form>
+</center></body>
+</html>

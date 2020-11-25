@@ -1,0 +1,44 @@
+body
+{
+	background: rgb(0,128,128);
+	 background-image: url("../BackPics/bmwwww.jpg");
+	 background-repeat: no-repeat;
+   background-size: 100% 640px;
+ }
+
+	table{
+	border-collapse: collapse;
+	width: 100%;
+	color: white;
+	background-color: blue;
+	font-style: "Arial Rounded MT Bold";
+	font-size: 20px;
+	text-align: center;
+	}
+	#no
+	{
+		color: red;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
+	#of
+	{
+		color: blue;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
+	#link
+	{
+		color: blue;
+		background-color: white;
+		font-style: "Arial Rounded MT Bold";
+		font-size: 20px;
+		text-align: center;
+
+	}
