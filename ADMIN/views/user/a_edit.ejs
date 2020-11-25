@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Edit Post</title>
+</head>
+
+<body>
+	<form method="post">
+		<fieldset>
+			<legend>Edit Post</legend>
+			<table>
+				<tr>
+					<td>username</td>
+					<td><input type="text" name="username" value="<%= users[0].username %>"></td>
+				</tr>
+				<tr>
+					<td>password</td>
+					<td><input type="text" name="password" value="<%= users[0].password %>"></td>
+				</tr>
+
+				<tr>
+					<td>email</td>
+					<td><input type="text" name="email" value="<%= users[0].email %>"></td>
+				</tr>
+
+				<tr>
+					<td>gender</td>
+					<td><input type="text" name="gender" value="<%= users[0].gender %>"></td>
+				</tr>
+
+
+				<tr>
+					<td>education</td>
+					<td><input type="text" name="education" value="<%= users[0].education %>"></td>
+				</tr>
+				<tr>
+					<td>type</td>
+					<td><input type="text" name="type" value="<%= users[0].type %>"></td>
+				</tr>
+				<!-- <tr>
+					<td>Room Tag</td>
+					<td><input type="text" name="rTag" value="<%= users[0].tag %>"></td>
+				</tr> -->
+
+				<tr>
+					<td></td>
+					<td><input type="submit" name="submit" value="Submit"></td>
+					<a href="/home">Back</a>
+
+				</tr>
+
+			</table>
+		</fieldset>
+	</form>
+</body>
+
+</html>
