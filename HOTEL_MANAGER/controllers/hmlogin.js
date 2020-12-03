@@ -3,7 +3,7 @@ const userModel		= require.main.require('./models/userModel');
 const router 		= express.Router();
 
 router.get('/', (req, res)=>{
-	res.render('login/index');
+	res.render('login/hmindex');
 });
 
 router.post('/', (req, res)=>{
@@ -21,7 +21,7 @@ console.log(req.body.username);
 		
 		
 
-		if(status == "hm"){
+		if(status == "HotelManager"){
 			
 			req.session.uname = req.body.username;
 			

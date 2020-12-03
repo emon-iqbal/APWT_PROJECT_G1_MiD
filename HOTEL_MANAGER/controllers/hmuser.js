@@ -9,18 +9,18 @@ router.get('*', (req, res, next) => {
 
 });
 
-router.get('/create', (req, res) => {
+router.get('/hmcreate', (req, res) => {
 	if (req.session.uname != "") {
 
-		res.render('user/create');
+		res.render('user/hmcreate');
 	}
 	else {
-		res.redirect('/login');
+		res.redirect('/hmlogin');
 	}
 });
 
 
-router.post('/create', (req, res) => {
+router.post('/hmcreate', (req, res) => {
 
 	if (req.session.uname != "") {
 		rtag = req.session.uname;
@@ -46,13 +46,13 @@ router.post('/create', (req, res) => {
 
 	}
 	else {
-		res.redirect('/login');
+		res.redirect('/hmlogin');
 	}
 
 
 });
 
-router.get('/edit/:id', (req, res) => {
+router.get('/hmedit/:id', (req, res) => {
 
 	if (req.session.uname != "") {
 
@@ -60,7 +60,7 @@ router.get('/edit/:id', (req, res) => {
 
 		userModel.getById(i, function (results) {
 			console.log(i);
-			res.render('user/edit', { users: results });
+			res.render('user/hmedit', { users: results });
 
 		})
 
@@ -74,10 +74,10 @@ router.get('/edit/:id', (req, res) => {
 
 });
 
-router.post('/edit/:id', (req, res) => {
+router.post('/hmedit/:id', (req, res) => {
 
 	if (req.session.uname != "") {
-		
+
 		var i = req.params.id;
 
 		var editPost = {
@@ -87,7 +87,7 @@ router.post('/edit/:id', (req, res) => {
 			rType: req.body.rType,
 			rDesc: req.body.rDesc,
 			avail: req.body.avail,
-			
+
 		};
 
 		console.log(editPost.pTitle);
@@ -113,23 +113,13 @@ router.post('/edit/:id', (req, res) => {
 
 );
 
-router.get('/delete/:id', (req, res) => {
-
-
-
-
-	res.render('user/delete');
-
-
-
-	//console.log(editUser.eName);
-
-
-
+router.get('/hmdelete/:id', (req, res) => {
+	
+	res.render('user/hmdelete');
 
 });
 
-router.post('/delete/:id', (req, res) => {
+router.post('/hmdelete/:id', (req, res) => {
 
 	var i = req.params.id;
 
@@ -137,7 +127,7 @@ router.post('/delete/:id', (req, res) => {
 
 		if (!status) {
 
-			res.redirect('/home/userlist');
+			res.redirect('/home/hmuserlist');
 		} else {
 			res.redirect('/login');
 		}

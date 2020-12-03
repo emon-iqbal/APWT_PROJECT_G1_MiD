@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 	if (req.session.uname != "") {
 		var suname = req.session.uname;
 		//var suid = req.session.uname;
-		res.render('home/index', { name: suname});
+		res.render('home/hmindex', { name: suname});
 	}
 
 	else {
@@ -25,13 +25,13 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/userlist', (req, res) => {
+router.get('/hmuserlist', (req, res) => {
 
 	if (req.session.uname != "") {
 		suname = req.session.uname;
 		// console.log(suname);
 		userModel.getAll(suname,function (results) {
-			res.render('home/userlist', { users: results });
+			res.render('home/hmuserlist', { users: results });
 
 		});
 	}
@@ -42,13 +42,13 @@ router.get('/userlist', (req, res) => {
 
 });
 
-router.get('/commentlist', (req, res) => {
+router.get('/hmcommentlist', (req, res) => {
 
 	if (req.session.uname != "") {
 		//suname = req.session.uname;
 		// console.log(suname);
 		commentModel.getAll(function (results) {
-			res.render('home/commentlist', { users: results });
+			res.render('home/hmcommentlist', { users: results });
 
 		});
 	}
@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
 	userModel.search(word, function (results) {
 
 		console.log("in controller " + { users: results });
-		res.render('user/edit', { users: results });
+		res.render('user/hmedit', { users: results });
 
 	});
 
@@ -90,7 +90,7 @@ router.get('/ajaxsearch/:id',(req,res)=>{
 			var str = "";
 			for(i=0;i<results.length;i++)
 			{
-				str+='<a style="position:relative; left:30px; font-size:20px; margin-top:50px;" href="/user/edit/'+results[i].pid+'">'+results[i].ptitle+'</a><br><br>';
+				str+='<a style="position:relative; left:30px; font-size:20px; margin-top:50px;" href="/user/hmedit/'+results[i].pid+'">'+results[i].ptitle+'</a><br><br>';
 
 			}
 			console.log("in ajax "+str);

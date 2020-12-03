@@ -22,17 +22,7 @@
 			<!-- <td>Tag</td> -->
 			<td>Action</td>
 		</tr>
-		
-		<!-- <% for(var i=0; i < users.length; i++){ %>
-			
-			<tr>
-				<td><%= users[i][0] %></td>
-				<td><%= users[i][1] %></td>
-				<td><%= users[i][2] %></td>
-				<td><%= users[i][3] %></td>
-			</tr>
-
-		<% } %> -->
+	
 
 		<% 
 			users.forEach( function(std){ %>
@@ -46,8 +36,8 @@
 				<td><%= std.avail %></td>
 				<!-- <td><%= std.tag %></td> -->
 				<td>
-					<a href="/user/edit/<%= std.pid %>">Edit</a> |
-					<a href="/user/delete/<%= std.pid %>">Delete</a>
+					<a href="/user/hmedit/<%= std.pid %>">Edit</a> |
+					<a href="/user/hmdelete/<%= std.pid %>">Delete</a>
 				</td>
 			</tr>
 

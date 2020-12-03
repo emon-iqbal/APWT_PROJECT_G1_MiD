@@ -4,14 +4,13 @@ const bodyParser 		= require('body-parser');
 const exSession 		= require('express-session');
 const cookieParser 		= require('cookie-parser');
 
-const login				= require('./controllers/login');
-const logout			= require('./controllers/logout');
-const home				= require('./controllers/home');
-const comment			= require('./controllers/comment');
-// const eusers			= require('./controllers/eusers');
+const login				= require('./controllers/hmlogin');
+const logout			= require('./controllers/hmlogout');
+const home				= require('./controllers/hmhome');
+const comment			= require('./controllers/hmcomment');
 const path				= require('path');
 
-const user				= require('./controllers/user');
+const user				= require('./controllers/hmuser');
 const app				= express();
 const port				= 3000;
 

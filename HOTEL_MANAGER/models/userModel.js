@@ -3,7 +3,7 @@ const db = require('./db');
 module.exports = {
 	validate: function (user, callback) {
 
-		var sql = "select * from user where uname='" + user.uname + "' and password='" + user.password + "'";
+		var sql = "select * from travelbliss_users where username='" + user.uname + "' and password='" + user.password + "'";
 		db.getResults(sql, function (results) {
 			if (results.length > 0) {
 
